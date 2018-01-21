@@ -58,7 +58,13 @@ ul.swatch li:first-child { webkit-border-top-left-radius: 9px; -webkit-border-bo
 .cv h2 { font-size: 26.5px; }
 .cv h1 { font-size: 32.5px; }
 
-.notes, .contact, .about, .cv, .error, .swatches { margin-bottom: 30px; }
+/* Projects */
+.projects {line-height: 23px; width: 90%; margin: 0 auto;}
+.projects li { line-height: 23px; }
+.projects h2 { font-size: 26.5px; }
+.projects h1 { font-size: 32.5px; }
+
+.notes, .contact, .about, .cv, .projects .error, .swatches { margin-bottom: 30px; }
 
 /* Contact */
 iframe {font-family: 'Merriweather', Georgia, Times; font-size: 16px;}
