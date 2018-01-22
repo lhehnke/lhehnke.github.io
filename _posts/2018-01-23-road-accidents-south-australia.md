@@ -12,7 +12,7 @@ tags:
 - crashes
 ---
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="50px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="600px" height="50px" /></p>
 
 Add introductory text.
 
