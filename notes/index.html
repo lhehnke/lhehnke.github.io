@@ -6,12 +6,12 @@ description: Blog posts by Lisa Hehnke.
 ---
 
 
-<ul class="posts">
+	<div class="notes">
+	  
+	  <h4>Postings</h4>
 
-<h4>Postings</h4>
 
-{% for post in site.posts %}
-<span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-{% endfor %}
-</ul>  
+     			{% include post-list.html %}
+			
+</div> <!-- .notes -->
 
