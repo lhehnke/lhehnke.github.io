@@ -12,7 +12,7 @@ tags:
 - crashes
 ---
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="50px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="50px" /></p>
 
 Introductory text.
 
@@ -139,9 +139,9 @@ ggplot() +
   coord_equal() 
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 
 
 Since our accident data only covers crashes in one particular state, we use the `sa_shp`polygon we subsetted above to crop the map to the South Australian area
@@ -158,9 +158,9 @@ ggplot() +
 
 which yields the following map where the point sizes reflect the total number of casualties (divided by 1.5 for aesthetic reasons):
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot2.png" width="550px" height="500px" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 
 ## Visualizing crashes by type
 
@@ -190,9 +190,9 @@ ggplot(accidents_df, aes(crash_type)) +
 ```
 which results in this plot:
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot3.png" width="550px" height="500px" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 
 ## Visualizing casualties by crash type
 
@@ -223,9 +223,9 @@ ggplot(accidents_cas_ordered, aes(crash_type, total_cas)) +
 
 These three chunks of code then produce the following plot:
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot4.png" width="550px" height="500px" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
  
  ## Bonus: Visualizing casualties via lollipop chart
  
@@ -246,11 +246,12 @@ ggplot(accidents_cas, aes(x = crash_type, y = total_cas)) +
  
  This is the result:
  
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot5b.png" width="550px" height="500px" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="40px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="40px" /></p>
 
 Conclusion
 
 **Note:** The above code is only a (slightly adapted) snippet of the full script, which can be found <a href="https://github.com/lhehnke/road-accidents">here</a>.*
 
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="50px" /></p>
