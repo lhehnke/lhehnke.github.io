@@ -14,7 +14,7 @@ tags:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="50px" /></p>
 
-** THIS IS A TEST **
+**THIS IS A TEST**
 
 Introductory text.
 
@@ -46,9 +46,13 @@ and download `road-crashes-in-sa-2014-16.zip`, unzip it and import `2016_DATA_SA
 ```r
 # Download, unzip and import data on road crashes in 2016
 temp <- tempfile()
+
 download.file("https://data.sa.gov.au/data/dataset/21386a53-56a1-4edf-bd0b-61ed15f10acf/resource/446afe5b-4e01-4cdf-a281-edd25aaf3802/download/road-crashes-in-sa-2014-16.zip", temp, mode = "w")
+
 unzip(temp)
+
 accidents <- read_csv("2016_DATA_SA_Crash.csv")
+
 unlink(temp)
 ```
 
@@ -60,7 +64,9 @@ colnames(accidents) <- gsub(" ", "_", str_trim(tolower(names(accidents))), fixed
 
 # Add column for fatality status of each crash (fatal/non-fatal)
 accidents$fatality <- NA # prevents error message for tibble
+
 accidents$fatality[accidents$csef_severity == "4: Fatal"] <- "Fatal"
+
 accidents$fatality[accidents$csef_severity != "4: Fatal"] <- "Non-fatal"
 
 # Recode type of crash
@@ -77,10 +83,15 @@ proj <- "+proj=lcc +lat_1=-28 +lat_2=-36 +lat_0=-32 +lon_0=135 +x_0=1000000 +y_0
 
 # Code spatial points and transform to data frame
 points <- proj4::project(accidents[, c("accloc_x", "accloc_y")], proj = proj, inverse = TRUE)
+
 accidents$longitude <- points$x
+
 accidents$latitude <- points$y
+
 names(accidents)[names(accidents) == "longitude"] <- "long"
+
 names(accidents)[names(accidents) == "latitude"] <- "lat"
+
 accidents_df <- as.data.frame(accidents)
 ```
 
@@ -90,9 +101,13 @@ Shapefiles (`.shp`) for Australia -- consisting of country outlines and state bo
 ```r
 # Download, unzip and import Australian shapefiles
 temp <- tempfile()
+
 download.file("http://data.daff.gov.au/data/warehouse/nsaasr9nnd_022/nsaasr9nnd_02211a04es_geo___.zip", temp, mode = "w")
+
 unzip(temp)
+
 aus_shp <- readShapeSpatial("aust_cd66states.shp", proj4string = CRS("+proj=longlat +ellps=WGS84"))
+
 unlink(temp)
 ```
 
@@ -193,6 +208,7 @@ Additionally, we can rearrange the bars of the plot by ordering the crash types 
 ```r
 # Calculate total number of casualties by crash type
 accidents_cas <- accidents_df[, c("crash_type", "total_cas")]
+
 accidents_cas %<>% 
   group_by(crash_type) %>% 
   summarise(cas_sum = sum(total_cas))
