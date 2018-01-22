@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello, World!"
-author: "Lisa Hehnke"
+<!--author: "Lisa Hehnke"-->
 date: "January 22, 2018"
 type: post
 published: true
