@@ -3,3 +3,9 @@ markdown: kramdown
 highlighter: rouge
 name: Lisa Hehnke's Blog
 url: http://lhehnke.github.io
+
+# Markdown Processors
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
