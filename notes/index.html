@@ -5,10 +5,13 @@ notes: active
 description: Blog posts by Lisa Hehnke.
 ---
 
+
 <ul class="posts">
 
+<h4>Postings</h4>
+
 {% for post in site.posts %}
-<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+<span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 {% endfor %}
 </ul>  
 
