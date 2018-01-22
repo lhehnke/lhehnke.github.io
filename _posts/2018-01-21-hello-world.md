@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello, World!"
-date: "January 22, 2018"
+date: "January 21, 2018"
 type: post
 published: true
 status: publish
