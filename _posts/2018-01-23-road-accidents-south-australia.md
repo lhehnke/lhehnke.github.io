@@ -253,5 +253,3 @@ ggplot(accidents_cas, aes(x = crash_type, y = total_cas)) +
 Conclusion
 
 **Note:** The above code is only a (slightly adapted) snippet of the full script, which can be found <a href="https://github.com/lhehnke/road-accidents">here</a>.*
-
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="550px" height="50px" /></p>
