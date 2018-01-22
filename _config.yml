@@ -1,4 +1,5 @@
 permalink: /notes/:year/:month/:day/:title
 markdown: kramdown
+highlighter: rouge
 name: Lisa Hehnke's Blog
 url: http://lhehnke.github.io

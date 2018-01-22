@@ -43,7 +43,7 @@ Data on all road accidents in South Australia is provided the *South Australian 
 To download the data for the following analysis, either go to <a href="https://data.sa.gov.au/data/dataset/road-crash-data">their website</a>
 and download `road-crashes-in-sa-2014-16.zip`, unzip it and import `2016_DATA_SA_Crash.csv` or run this code from within `R`:
 
-```ruby
+```r
 # Download, unzip and import data on road crashes in 2016
 temp <- tempfile()
 
