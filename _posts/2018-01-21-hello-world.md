@@ -2,7 +2,7 @@
 layout: post
 title: "Hello, World!"
 author: "Lisa Hehnke"
-date: "January 23, 2018"
+date: "January 22, 2018"
 type: post
 published: true
 status: publish
@@ -128,7 +128,12 @@ ggplot() +
   coord_equal() 
 ```
 
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="50px" /></p>
+
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" /></p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="5500px" height="50px" /></p>
+
 
 Since our accident data only covers crashes in one particular state, we use the `sa_shp`polygon we subsetted above to crop the map to the South Australian area
 
