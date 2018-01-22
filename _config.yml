@@ -3,3 +3,10 @@ markdown: kramdown
 name: Lisa Hehnke's Blog
 url: http://lhehnke.github.io
 
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  hard_wrap: false
