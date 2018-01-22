@@ -27,7 +27,7 @@ img.avatar { margin-bottom: 30px; }
 .jumbotron { margin: 80px 0; }
 .jumbotron h1 { font-size: 72px; line-height: 1; }
 .jumbotron .btn { font-size: 21px; padding: 14px 24px; }
-.marketing p { line-height: 25px; }
+.marketing p { line-height: 26px; }
 .marketing p.lead { line-height: 30px; }
 
 /* Notes */
@@ -53,13 +53,13 @@ ul.swatch li:first-child { webkit-border-top-left-radius: 9px; -webkit-border-bo
 .clear { clear: both; height: 20px; }
 
 /* CV */
-.cv {line-height: 23px; width: 90%; margin: 0 auto;}
+.cv {line-height: 26px; width: 90%; margin: 0 auto;}
 .cv li { line-height: 23px; }
 .cv h2 { font-size: 26.5px; }
 .cv h1 { font-size: 32.5px; }
 
 /* Projects */
-.projects {line-height: 23px; width: 90%; margin: 0 auto;}
+.projects {line-height: 26px; width: 90%; margin: 0 auto;}
 .projects li { line-height: 23px; }
 .projects h2 { font-size: 26.5px; }
 .projects h1 { font-size: 32.5px; }
