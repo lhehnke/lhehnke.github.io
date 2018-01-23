@@ -14,7 +14,7 @@ blockquote p { font-size: 16px; line-height: 1.6em; }
 h3.text-muted a {text-decoration: none; color: #999999; }
 h3.text-muted a:hover { text-decoration: none; color: #0088cc; }
 
-img.avatar { margin-bottom: 32px; }
+img.avatar { margin-bottom: 30px; }
 		
 /* Custom container */
 .container > hr { margin: 30px 0; }
@@ -58,20 +58,12 @@ ul.swatch li:first-child { webkit-border-top-left-radius: 9px; -webkit-border-bo
 .cv h2 { font-size: 26.5px; }
 .cv h1 { font-size: 32.5px; }
 
-.cvlist { width: 90%; margin: 0 auto; }
-ul.listcv { margin: 0 auto; }
-ul.listcv li {line-height: 30px; } 
-
 /* Projects */
 .projects {line-height: 26px; width: 90%; margin: 0 auto;}
 
 .projects li { line-height: 23px; }
 .projects h2 { font-size: 26.5px; }
 .projects h1 { font-size: 32.5px; }
-
-.projectlist { width: 90%; margin: 0 auto; }
-ul.listproject { margin: 0 auto; }
-ul.listproject li {line-height: 30px; } 
 
 .notes, .contact, .about, .cv, .projects, .error, .swatches { margin-bottom: 30px; }
 
