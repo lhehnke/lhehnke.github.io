@@ -61,8 +61,7 @@ After downloading and importing the data, some minor data cleaning is required.
 colnames(accidents) <- gsub(" ", "_", str_trim(tolower(names(accidents))), fixed = TRUE)
 
 # Add column for fatality status of each crash (fatal/non-fatal)
-accidents$fatality <- NA # prevents error message for tibble
-
+accidents$fatality <- NA # prevents tibble error message
 accidents$fatality[accidents$csef_severity == "4: Fatal"] <- "Fatal"
 accidents$fatality[accidents$csef_severity != "4: Fatal"] <- "Non-fatal"
 
@@ -77,7 +76,11 @@ Add text on projections
 ```r
 # Projection for accident coordinates (EPSG:3107)
 proj <- "+proj=lcc +lat_1=-28 +lat_2=-36 +lat_0=-32 +lon_0=135 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+```
 
+After setting the right projection, we can transform the accident coordinates to spatial points.
+
+```r
 # Code spatial points and transform to data frame
 points <- proj4::project(accidents[, c("accloc_x", "accloc_y")], proj = proj, inverse = TRUE)
 
@@ -95,6 +98,7 @@ Shapefiles (`.shp`) for Australia -- consisting of country outlines and state bo
 
 ```r
 # Download, unzip and import Australian shapefiles
+
 temp <- tempfile()
 
 download.file("http://data.daff.gov.au/data/warehouse/nsaasr9nnd_022/nsaasr9nnd_02211a04es_geo___.zip", temp, mode = "w")
@@ -252,4 +256,4 @@ ggplot(accidents_cas, aes(x = crash_type, y = total_cas)) +
 
 Conclusion
 
-**Note:** The above code is only a (slightly adapted) snippet of the full script, which can be found <a href="https://github.com/lhehnke/road-accidents">here</a>.*
+***Note:** The above code is only a (slightly adapted) snippet of the full script, which can be found <a href="https://github.com/lhehnke/road-accidents">here</a>.*
