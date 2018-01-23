@@ -70,7 +70,7 @@ ul.swatch li:first-child { webkit-border-top-left-radius: 9px; -webkit-border-bo
 iframe {font-family: 'Merriweather', Georgia, Times; font-size: 16px;}
 
 /* About */
-.about ul.list-unstyled li { line-height: 30px; text-indent: -30px; margin-left: 30px;}
+.about ul.list-unstyled li { line-height: 30px; margin-left: 30px;}
 
 /* Guides */
 .guide { width: 90%; margin: 0 auto 60px auto; line-height: 26px;}
