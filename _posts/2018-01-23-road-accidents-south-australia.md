@@ -12,16 +12,17 @@ tags:
 - crashes
 ---
 
-<p style="margin-top:60px">Add introductory text.</p>
+<p style="margin-top:60px"Since I may already have acquired a bit of a reputation for being preoccupied with <a href="https://correlaid.org/blog/posts/point-pattern-analysis">accident analyses</a>, I wanted to take another shot at it.</p>
+
+Hence, this blog post maps and analyzes all fatal and non-fatal road accidents happening in South Australia in 2016. Data for this analysis is provided by the <a href="https://data.sa.gov.au/">South Australian Government Data Directory</a>. 
+
 
 ## Setup
 
 Running the analysis below requires the packages `ggmap`, `ggplot2`, `ggthemes`, `magrittr`, `maps`, `mapdata`, 
 `maptools`, `proj4`, `raster`, `rgdal`, `sp`, `stringr`, and `tidyverse`.
 
-For loading multiple packages at once, I recommend `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()`
-and installs missing packages if necessary.
-
+For loading multiple packages at once, I conventionally use `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
 
 ``` r
 # Install and load pacman if not already installed
@@ -34,10 +35,7 @@ p_load(ggmap, ggplot2, ggthemes, magrittr, maps, mapdata, maptools, proj4, raste
 ```
 ## Downloading and cleaning data
 
-Data on all road accidents in South Australia is provided the *South Australian Government Data Directory*. 
-
-To download the data for the following analysis, either go to <a href="https://data.sa.gov.au/data/dataset/road-crash-data">their website</a>
-and download `road-crashes-in-sa-2014-16.zip`, unzip it and import `2016_DATA_SA_Crash.csv` or run this code from within `R`:
+To download the data for the following analysis, either go to the <a href="https://data.sa.gov.au/data/dataset/road-crash-data">South Australian Government Data Directory's website</a> and download `road-crashes-in-sa-2014-16.zip` manually, unzip it and import `2016_DATA_SA_Crash.csv` or run this code directly in `R`:
 
 ```r
 # Download, unzip and import data on road crashes in 2016
@@ -52,7 +50,7 @@ accidents <- read_csv("2016_DATA_SA_Crash.csv")
 unlink(temp)
 ```
 
-After downloading and importing the data, some minor data cleaning is required.  
+After downloading and importing the data, some minor data wrangling is required.  
 
 ```r
 # Replace blank spaces in column names with underscores and convert letters to lowercase
@@ -108,7 +106,7 @@ aus_shp <- readShapeSpatial("aust_cd66states.shp", proj4string = CRS("+proj=long
 unlink(temp)
 ```
 
-For creating a tailored map depicting road accidents in South Australia only, we need to subset the state polygon from the spatial *SpatialPolygonsDataFrame* object `aus_shp`.
+For creating a tailor-made map depicting road accidents in South Australia only, we need to subset the state polygon from the spatial *SpatialPolygonsDataFrame* object `aus_shp`.
 
 ```r
 # Subset South Australia
@@ -142,7 +140,6 @@ ggplot() +
 ```
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" vspace="50px"/></p>
-
 
 Since our accident data only covers crashes in one particular state, we use the `sa_shp`polygon we subsetted above to crop the map to the South Australian area
 
@@ -187,15 +184,17 @@ ggplot(accidents_df, aes(crash_type)) +
   scale_fill_manual(name = "Severity", values = c("Fatal" = "red2", "Non-fatal" = "grey35")) +
   viz_theme + ylim(0, 5000) # + theme(legend.position = "bottom")
 ```
-which results in this plot:
+
+and thus creating this plot:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot3.png" width="550px" height="500px" vspace="50px"/></p>
+
 
 ## Visualizing casualties by crash type
 
 In a similar manner, we can make another bar chart for the number of casualties by crash type. Prior to plotting, however, we need to calculate the corresponding numbers first. 
 
-Additionally, we can rearrange the bars of the plot by ordering the crash types by number of casualties in ascending order.
+As a bonus feature we can rearrange the bars of the plot by ordering the crash types by number of casualties in ascending order.
 
 ```r
 # Calculate total number of casualties by crash type
@@ -225,6 +224,7 @@ These three chunks of code then produce the following plot:
 ## Bonus: Visualizing casualties via lollipop chart
  
 While browsing <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">this site</a>, I found both inspiration and sample codes for making some #dataviz magic happen.
+
 As a result, I decided to complement the previous plot with its more modern looking lollipop chart version.
  
 ```r 
@@ -238,9 +238,7 @@ ggplot(accidents_cas, aes(x = crash_type, y = total_cas)) +
   labs(x = "", y = "", title = "Number of casualties (fatal and non-fatal) by crash type", subtitle = "South Australia, 2016") +
   viz_theme + ylim(0, 2000)
  ```
- 
- This is the result:
- 
+
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot5b.png" width="550px" height="500px" vspace="50px"/></p>
 
 Conclusion
