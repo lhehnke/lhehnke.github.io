@@ -13,17 +13,18 @@ tags:
 ---
 
 
-<p style="margin-top:80px">Add introductory text.</p>
+<p style="margin-top:80px">While sitting in the office, my colleague <a href="https://www.wiso.uni-hamburg.de/fachbereich-sowi/professuren/schnapp/team/dietrich-brian.html">Brian</a> and I stumbled upon this dead-on <a href="https://www.youtube.com/watch?v=Z9cB0TjfIkM">honest trailer</a> of a movie called <em>The Room</em> a.k.a. one of the worst movies of all time (written, produced, directed by and starring Tommy Wiseau).</p>
+  
+And since the movie features such Shakespearian quotes as *"I did not hit her, it's not true! It's bullshit! I did not hit her! I did naaht! Oh hi, Mark"*, we joked about mining the screenplay for other hidden gems.
 
-
-
+Well, no sooner said than done.
+ 
 ## Setup
 
-Running the analysis below requires the packages `dplyr`, `ggplot2`, `magrittr`, `pdftoold`, `reshape2`, `stringr`, 
+Conducting the analysis in this post requires the packages `dplyr`, `ggplot2`, `magrittr`, `pdftools`, `reshape2`, `stringr`, 
 `tidytext`, and `wordcloud`.
 
-For loading multiple packages at once, I recommend `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()`
-and installs missing packages if necessary.
+For loading multiple packages at once, I recommend `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
 
 ``` r
 # Install and load pacman if not already installed
@@ -34,12 +35,9 @@ library(pacman)
 p_load(dplyr, ggplot2, magrittr, pdftools, reshape2, stringr, tidytext, wordcloud)
 ```
 
-
 ## Importing data
 
-Data on all road accidents in South Australia is provided the *South Australian Government Data Directory*. 
-
-The full movie script can be found <a href="https://theroomscriptblog.files.wordpress.com/2016/04/the-room-original-script-by-tommy-wiseau.pdf">here</a>. To download and import it in `R`, simply run
+The full movie script can be found <a href="https://theroomscriptblog.files.wordpress.com/2016/04/the-room-original-script-by-tommy-wiseau.pdf">here</a>. To download and import it in `R` with `pdf_text()` from the package `pdftools`, which extracts texts from `pdf` files, simply run
 
 ```r
 # Download pdf
@@ -50,12 +48,13 @@ download.file("https://theroomscriptblog.files.wordpress.com/2016/04/the-room-or
 room <- pdf_text("the-room-original-script-by-tommy-wiseau.pdf")
 ```
 
-`pdf_text()` from `pdftools` useful
-
-
 ## Text cleaning
 
-Rather large chunks of text, however, code pretty self-explanatory 
+After extracting the raw text of The Room's screenplay, it needs some cleaning before it can be analyzed. 
+
+Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. For most of these steps `lapply()` can be used to apply the respective function to every element of the list. 
+
+Subsequently, the cleaned text, which consists of a sequence of strings, can be splitted into words -- a process called *tokenization*.
 
 ```r
 # Separate lines with \n indicating line breaks
@@ -78,7 +77,7 @@ room_tidy <- lapply(room_tidy, function(x) gsub("SCENE.*", "", x))
 # Remove punctuation (except for apostrophes) and numbers
 room_tidy <- lapply(room_tidy, function(x) gsub("[^[:alpha:][:blank:]']", "", x))
 
-# Remove stage and character directions 
+# Remove directing instructions
 room_tidy <- lapply(room_tidy, function(x) x[!grepl("^[A-Z ']+$", x), drop = FALSE])
 
 # Convert to lowercase
@@ -106,8 +105,9 @@ room_df %<>% anti_join(stop_words)
 
 ## Visualizing most common words
 
-```r
+After processing the raw text and turning it into a tidy format, we can extract the most common words from the movie script by counting their appearances with the `count()` function from the `plyr` package and plot them by running the following code
 
+```r
 # Find most common words
 room_df_wordfreq <- room_df %>%
   count(word, sort = TRUE)
@@ -122,12 +122,15 @@ room_df %>%
   xlab("") + ylab("") + ggtitle("Most common words in The Room", subtitle = "Written by Tommy Wiseau") +
   ylim(0, 100) + coord_flip()
 ```  
+which creates this graph:
 
-which yields the following graph:
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot1.png" width="550px" height="500px" vspace="50px"/></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" vspace="60px"/></p>
+It comes as little surprise that the most common words in the movie script are of a similar quality than the quote in the beginning of this post with the most frequently used words being "Johnny", "Lisa", and "Mark" -- the main characters' names -- and such elaborate expressions as "yeah" or "ha" (sadly, *naaht* didn't make it to the list). 
 
 ## Sentiment analysis
+
+In a similar manner, we can conduct a basic sentiment analysis and visualize the results. For this purpose we will use the `get_sentiments()` functions from the `tidytext` package and use both the `NRC` Emotion Lexicon from Saif Mohammad and Peter Turney (all sentiments) and the sentiment lexicon from `Bing` Liu and collaborators (positive/negative sentiments).
 
 ```r
 # Get sentiments (nrc) and join
@@ -142,9 +145,15 @@ nrc_counts <- data.frame(table(nrc$sentiment))
 # Plot sentiment scores
 ggplot(data = nrc_counts, aes(x = Var1, y = Freq)) +
   geom_bar(aes(fill = Var1), stat = "identity") +
-  xlab("Sentiment") + ylab("Count") + ggtitle("Total sentiment scores in The Room", subtitle = "Written by Tommy Wiseau") +
+  xlab("") + ylab("") + ggtitle("Total sentiment scores in The Room", subtitle = "Written by Tommy Wiseau") +
   ylim(0, 4000) + theme(legend.position = "none") 
 ```
+
+yielding the following plot:
+
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot2.png" width="550px" height="500px" vspace="50px"/></p>
+
+We can see in the `NRC` sentiments plot that most words in The Room's screenplay are negatively scored, followed by positively scored words. By calculating `Bing` sentiments next, we can explore this tendency further.
 
 ## Positive and negative words
 
@@ -155,7 +164,7 @@ bing_counts <- room_df %>%
   count(word, sentiment, sort = TRUE) %>%
   ungroup()
 
-# Calculate top 10 word contributors
+# Calculate top word contributors
 bing_counts_plot <- bing_counts %>%
   group_by(sentiment) %>%
   top_n(10) %>%
@@ -166,38 +175,29 @@ bing_counts_plot <- bing_counts %>%
 ggplot(bing_counts_plot, aes(word, n, fill = sentiment)) +
   geom_col(show.legend = FALSE) +
   facet_wrap(~sentiment, scales = "free_y") +
-  xlab("") + ylab("Count") + 
+  xlab("") + ylab("") + 
   ggtitle("Most common positive and negative words in The Room", subtitle = "Written by Tommy Wiseau") +
   coord_flip()
-  ```r
+  ```
+  
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot3.png" width="550px" height="500px" vspace="50px"/></p>
+
+As the second sentiment plot shows, the most common positive words in The Room are "love", "happy", and "fine", while the most common negative words are "worry", "crazy", and "wrong". 
   
 ## Word clouds
+
+To finish up, we plot one of the infamous word clouds (albeit in a slightly more advanced version) by constrasting the most common positive and negative words in The Room.  
   
 ```r
-# Set color
-pal <- brewer.pal(9, "Greys")[-(1:4)] 
-
-# Plot traditional word cloud
-room_df %>%
-  anti_join(stop_words) %>%
-  count(word) %>%
-  with(wordcloud(word, n, colors = pal, max.words = 50))
-
-# Plot comparison cloud with positive and negative sentiments (bing)
-room_df %>%
-  inner_join(get_sentiments("bing")) %>%
-  count(word, sentiment, sort = TRUE) %>%
-  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
-  comparison.cloud(colors = c("gray20", "gray70"), max.words = 60)
-
-# Plot previous comparison cloud in ggplot2 colors
+# Plot comparison cloud in ggplot2 colors
 ## Run > unique(g$data[[1]]["fill"]) after ggplot_build() to extract colors
 room_df %>%
   inner_join(get_sentiments("bing")) %>%
   count(word, sentiment, sort = TRUE) %>%
   acast(word ~ sentiment, value.var = "n", fill = 0) %>%
-  comparison.cloud(colors = c("#00BFC4", "#F8766D"), max.words = 60)
+  comparison.cloud(colors = c("#F8766D", "#00BFC4"), max.words = 60)
 ```
 
-Conclusion
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot4.png" width="550px" height="500px" vspace="50px"/></p>
 
+To wrap it up, the findings of this analysis can be summed up as follows: :heart: :grin: :relieved: :worried: :angry: :x:  
