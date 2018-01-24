@@ -48,7 +48,7 @@ download.file("https://theroomscriptblog.files.wordpress.com/2016/04/the-room-or
 room <- pdf_text("the-room-original-script-by-tommy-wiseau.pdf")
 ```
 
-to extract the text via `pdf_text()` from the package `pdftools`. 
+and extract the text via `pdf_text()` from the package `pdftools`. 
 
 ## Text cleaning
 
