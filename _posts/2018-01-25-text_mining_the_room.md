@@ -54,7 +54,7 @@ to extract the text via `pdf_text()` from the package `pdftools`.
 
 After extracting the raw text from The Room's `pdf` screenplay, it needs some cleaning prior to analyzing. 
 
-Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. 
+Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. (Please note that I deliberately didn't stem words.)
 
 For most of these steps, `lapply()` can be used to apply the respective function to each element of the list. 
 
