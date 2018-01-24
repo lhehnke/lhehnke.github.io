@@ -11,5 +11,5 @@ kramdown:
   syntax_highlighter: rouge
   hard_wrap: false
   
-plugins:
+gems:
   - jemoji
