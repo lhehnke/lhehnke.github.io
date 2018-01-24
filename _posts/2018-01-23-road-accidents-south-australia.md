@@ -14,12 +14,12 @@ tags:
 
 <p style="margin-top:60px">Since I may already have acquired a bit of a reputation for being preoccupied with <a href="https://correlaid.org/blog/posts/point-pattern-analysis">accident analyses</a>, I wanted to take another shot at it.</p>
 
-Hence, this blog post maps and analyzes all fatal and non-fatal road accidents happening in South Australia in 2016. Data for this analysis is provided by the <a href="https://data.sa.gov.au/">South Australian Government Data Directory</a>. 
+Hence, this blog post maps and analyzes all fatal and non-fatal road accidents happening in South Australia in 2016. Data for the analysis is provided by the <a href="https://data.sa.gov.au/">South Australian Government Data Directory</a>. 
 
 
 ## Setup
 
-Running the analysis below requires the packages `ggmap`, `ggplot2`, `ggthemes`, `magrittr`, `maps`, `mapdata`, 
+Running the code below requires the packages `ggmap`, `ggplot2`, `ggthemes`, `magrittr`, `maps`, `mapdata`, 
 `maptools`, `proj4`, `raster`, `rgdal`, `sp`, `stringr`, and `tidyverse`.
 
 For loading multiple packages at once, I conventionally use `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
@@ -141,7 +141,7 @@ ggplot() +
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" vspace="50px"/></p>
 
-Since our accident data only covers crashes in one particular state, we use the `sa_shp`polygon we subsetted above to crop the map to the South Australian area
+Since our accident data only covers crashes in one particular state, we use the `sa_shp` polygon we already subsetted to restrict the map to the South Australian area
 
 ```r
 # Plot road accidents with point sizes adjusted by number of casualties 
@@ -217,7 +217,7 @@ ggplot(accidents_cas_ordered, aes(crash_type, total_cas)) +
   viz_theme + ylim(0, 2000) 
 ```
 
-These three chunks of code then produce the following plot:
+These three chunks of code then produce the following plot.
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot4.png" width="550px" height="500px" vspace="50px"/></p>
  
