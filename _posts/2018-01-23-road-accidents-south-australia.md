@@ -12,7 +12,7 @@ tags:
 - crashes
 ---
 
-<p style="margin-top:80px">Add introductory text.</p>
+<p style="margin-top:60px">Add introductory text.</p>
 
 ## Setup
 
