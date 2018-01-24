@@ -21,7 +21,7 @@ Well, no sooner said than done.
  
 ## Setup
 
-Conducting the analysis in this post requires the packages `dplyr`, `ggplot2`, `magrittr`, `pdftools`, `reshape2`, `stringr`, 
+Conducting the analysis below requires the packages `dplyr`, `ggplot2`, `magrittr`, `pdftools`, `reshape2`, `stringr`, 
 `tidytext`, and `wordcloud`.
 
 For loading multiple packages at once, I recommend `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
@@ -58,7 +58,7 @@ Concretely, this means separating the lines of the raw text (`\n` indicating lin
 
 For most of these steps, `lapply()` can be used to apply the respective function to each element of the list. 
 
-Subsequently, the cleaned text, consisting of a sequence of strings, can be splitted into words -- a process called *tokenization*.
+While performing these steps, the cleaned text, consisting of a sequence of strings, is splitted into single words -- a process called *tokenization*.
 
 ```r
 # Separate lines with \n indicating line breaks
