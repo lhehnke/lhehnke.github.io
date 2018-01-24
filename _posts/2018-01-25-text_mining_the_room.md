@@ -158,9 +158,11 @@ yielding the following plot:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot2.png" width="550px" height="500px" vspace="50px"/></p>
 
-We can see in the `NRC` sentiments plot that most words in The Room's screenplay are negatively scored, followed by positively scored words. By calculating `Bing` sentiment scores next, we can explore this finding further.
+We can see in the `NRC` sentiments plot that most words in The Room's screenplay are negatively scored, followed by positively scored words.
 
 ## Positive and negative words
+
+By calculating `Bing` sentiment scores next, we can explore the previous finding further.
 
 ```r
 # Calculate contributions to positive and negative sentiments (bing) by word 
