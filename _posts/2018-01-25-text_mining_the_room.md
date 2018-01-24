@@ -54,7 +54,7 @@ to extract the text via `pdf_text()` from the package `pdftools`.
 
 After extracting the raw text from The Room's `pdf` screenplay, it needs some cleaning prior to analyzing. 
 
-Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. (Please note that I deliberately didn't stem words.)
+Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. (Note that I didn't stem words.)
 
 For most of these steps, `lapply()` can be used to apply the respective function to each element of the list. 
 
@@ -208,4 +208,4 @@ room_df %>%
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot4.png" width="550px" height="500px" vspace="50px"/></p>
 
 Wrapping it up, the findings of this analysis can be summarized follows:<br>
-:heart: :grin: :relieved: :worried: :angry: :x:  
+<p align="center"> :heart: :grin: :relieved: :worried: :angry: :x: </p>
