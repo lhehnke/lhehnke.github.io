@@ -37,7 +37,7 @@ p_load(dplyr, ggplot2, magrittr, pdftools, reshape2, stringr, tidytext, wordclou
 
 ## Importing data
 
-The full movie script can be found <a href="https://theroomscriptblog.files.wordpress.com/2016/04/the-room-original-script-by-tommy-wiseau.pdf">here</a>. To download and import it in `R` with `pdf_text()` from the package `pdftools`, which extracts texts from `pdf` files, simply run
+The full movie script can be found <a href="https://theroomscriptblog.files.wordpress.com/2016/04/the-room-original-script-by-tommy-wiseau.pdf">here</a>. To download and import it to `R`, simply run
 
 ```r
 # Download pdf
@@ -48,13 +48,17 @@ download.file("https://theroomscriptblog.files.wordpress.com/2016/04/the-room-or
 room <- pdf_text("the-room-original-script-by-tommy-wiseau.pdf")
 ```
 
+to extract the text via `pdf_text()` from the package `pdftools`. 
+
 ## Text cleaning
 
-After extracting the raw text of The Room's screenplay, it needs some cleaning before it can be analyzed. 
+After extracting the raw text from The Room's `pdf` screenplay, it needs some cleaning prior to analyzing. 
 
-Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. For most of these steps `lapply()` can be used to apply the respective function to every element of the list. 
+Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. 
 
-Subsequently, the cleaned text, which consists of a sequence of strings, can be splitted into words -- a process called *tokenization*.
+For most of these steps, `lapply()` can be used to apply the respective function to each element of the list. 
+
+Subsequently, the cleaned text, consisting of a sequence of strings, can be splitted into words -- a process called *tokenization*.
 
 ```r
 # Separate lines with \n indicating line breaks
@@ -63,10 +67,10 @@ room_tidy <- strsplit(room, "\n")
 # Remove cover page
 room_tidy <- room_tidy[-1]
 
-# Remove page numbers and header
+# Remove page numbers and headers
 room_tidy <- lapply(room_tidy, function(x) x[-(1:2)])
 
-# Remove footer
+# Remove footers
 room_tidy <- lapply(room_tidy, function(x) x[1:(length(x)-2)])
 
 # Remove information on act and scene
@@ -105,7 +109,7 @@ room_df %<>% anti_join(stop_words)
 
 ## Visualizing most common words
 
-After processing the raw text and turning it into a tidy format, we can extract the most common words from the movie script by counting their appearances with the `count()` function from the `plyr` package and plot them by running the following code
+After processing the raw text and turning it into a tidy format, we can extract the most common words from the movie script by counting their appearances within the script via `count()` from the `plyr` package and plot them by running the following code
 
 ```r
 # Find most common words
@@ -122,11 +126,12 @@ room_df %>%
   xlab("") + ylab("") + ggtitle("Most common words in The Room", subtitle = "Written by Tommy Wiseau") +
   ylim(0, 100) + coord_flip()
 ```  
+
 which creates this graph:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot1.png" width="550px" height="500px" vspace="50px"/></p>
 
-It comes as little surprise that the most common words in the movie script are of a similar quality than the quote in the beginning of this post with the most frequently used words being "Johnny", "Lisa", and "Mark" -- the main characters' names -- and such elaborate expressions as "yeah" or "ha" (sadly, *naaht* didn't make it to the list). 
+It comes as little surprise that the most common words in the movie script are of a similar quality to the quote in the beginning of this post with the most frequently used words being "Johnny", "Lisa", and "Mark" -- the main characters' names -- and more elaborate expressions such as "yeah" or "ha" (sadly, *naaht* didn't make it to the list). 
 
 ## Sentiment analysis
 
@@ -153,7 +158,7 @@ yielding the following plot:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot2.png" width="550px" height="500px" vspace="50px"/></p>
 
-We can see in the `NRC` sentiments plot that most words in The Room's screenplay are negatively scored, followed by positively scored words. By calculating `Bing` sentiments next, we can explore this tendency further.
+We can see in the `NRC` sentiments plot that most words in The Room's screenplay are negatively scored, followed by positively scored words. By calculating `Bing` sentiment scores next, we can explore this finding further.
 
 ## Positive and negative words
 
@@ -182,11 +187,11 @@ ggplot(bing_counts_plot, aes(word, n, fill = sentiment)) +
   
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot3.png" width="550px" height="500px" vspace="50px"/></p>
 
-As the second sentiment plot shows, the most common positive words in The Room are "love", "happy", and "fine", while the most common negative words are "worry", "crazy", and "wrong". 
+As the second sentiment graph shows, the most common positive words in The Room are "love", "happy", and "fine", while the most common negative words are "worry", "crazy", and "wrong". 
   
 ## Word clouds
 
-To finish up, we plot one of the infamous word clouds (albeit in a slightly more advanced version) by constrasting the most common positive and negative words in The Room.  
+To finish up, we finally plot one of the infamous word clouds (albeit in a slightly more advanced version) by constrasting the most common positive and negative words.  
   
 ```r
 # Plot comparison cloud in ggplot2 colors
@@ -200,5 +205,5 @@ room_df %>%
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot4.png" width="550px" height="500px" vspace="50px"/></p>
 
-To wrap it up, the findings of this analysis can be summed up as follows:<br>
+Wrapping it up, the findings of this analysis can be summed up as follows:<br>
 :heart: :grin: :relieved: :worried: :angry: :x:  
