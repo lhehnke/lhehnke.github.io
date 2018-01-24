@@ -154,8 +154,6 @@ ggplot(data = nrc_counts, aes(x = Var1, y = Freq)) +
   ylim(0, 4000) + theme(legend.position = "none") 
 ```
 
-yielding the following plot:
-
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot2.png" width="550px" height="500px" vspace="50px"/></p>
 
 We can see in the `NRC` sentiments plot that most words in The Room's screenplay are negatively scored, followed by positively scored words.
@@ -193,7 +191,7 @@ As the second sentiment graph shows, the most common positive words in The Room 
   
 ## Word clouds
 
-To finish up, we finally plot one of the infamous word clouds (albeit in a slightly more advanced version) by constrasting the most common positive and negative words.  
+To finish it up we now finally plot one of the infamous word clouds (albeit in a slightly more advanced version) by constrasting the most common positive and negative words  
   
 ```r
 # Plot comparison cloud in ggplot2 colors
@@ -204,6 +202,8 @@ room_df %>%
   acast(word ~ sentiment, value.var = "n", fill = 0) %>%
   comparison.cloud(colors = c("#F8766D", "#00BFC4"), max.words = 60)
 ```
+
+yielding this beautifully crafted word cloud:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot4.png" width="550px" height="500px" vspace="50px"/></p>
 
