@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mapping and Analyzing Road Accidents in South Australia"
+title: "Mapping and analyzing road accidents in South Australia"
 date: "January 23, 2018"
 type: post
 published: true
