@@ -107,7 +107,7 @@ room_df %<>% filter(word != "")
 room_df %<>% anti_join(stop_words)
 ```
 
-## Visualizing most common words
+## Visualizing word frequencies
 
 After processing the raw text and turning it into a tidy format, we can extract the most common words from the movie script by counting their appearances within the script via `count()` from the `plyr` package and plot them by running the following code
 
