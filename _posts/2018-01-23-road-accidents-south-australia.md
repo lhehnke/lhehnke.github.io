@@ -158,8 +158,8 @@ ggplot() +
 
 which yields the following map where the point sizes reflect the total number of casualties (divided by 1.5 for aesthetic reasons):
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot2.png" width="550px" height="500px" vspace=50px" /></p>
-  
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot2.png" width="550px" height="500px" vspace="50px"/></p>
+
 
 ## Visualizing crashes by type
 
