@@ -12,10 +12,7 @@ tags:
 - crashes
 ---
 
-<p style="margin-top:60px">Add introductory text</p>.
-
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/blank_space.png" width="600px" height="50px" /></p>
-
+<p style="margin-top:80px">Add introductory text.</p>
 
 ## Setup
 
