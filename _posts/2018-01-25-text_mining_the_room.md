@@ -200,4 +200,5 @@ room_df %>%
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot4.png" width="550px" height="500px" vspace="50px"/></p>
 
-To wrap it up, the findings of this analysis can be summed up as follows: :heart: :grin: :relieved: :worried: :angry: :x:  
+To wrap it up, the findings of this analysis can be summed up as follows:<br>
+:heart: :grin: :relieved: :worried: :angry: :x:  
