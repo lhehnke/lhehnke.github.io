@@ -69,7 +69,7 @@ accidents$crash_type[accidents$crash_type == "Left Road - Out of Control"] <- "L
 
 Prior to finally analyzing the accident data, some more geographical data wrangling needs to be done. 
 
-As a first step we need to choose the right projection for transforming the `x` and `y` coordinates provided in the data set into their respective `longitude` and `latitude equivalents. 
+As a first step we need to choose the right projection for transforming the `x` and `y` coordinates provided in the data set into their respective `longitude` and `latitude` equivalents. 
 
 The data itself comes with the following information on the projection (<a href="https://epsg.io/3107">EPSG:3107</a>)
 
