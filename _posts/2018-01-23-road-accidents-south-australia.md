@@ -245,7 +245,7 @@ These three chunks of code then produce the following plot:
  
 While browsing <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">this site</a>, I found both inspiration and sample codes for making some *#dataviz* magic happen.
 
-As a result, I decided to complement the previous plot with its more modern looking lollipop chart version.
+As a result, I decided to finish up this post by complementing the previous plot with its more modern looking lollipop chart version.
  
 ```r 
 # Lollipop chart of number of casualties by crash type 
