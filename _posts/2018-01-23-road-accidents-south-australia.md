@@ -108,9 +108,9 @@ names(accidents)[names(accidents) == "latitude"] <- "lat"
 accidents_df <- as.data.frame(accidents)
 ```
 
-For mapping spatial points adequately we need matching Australian shapefiles (`.shp`; a geospatial vector data format for `GIS` software), which luckily can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a> as well and consist of both country outlines and state borders. 
+In order to map the spatial points, we need matching Australian shapefiles (`.shp`; a geospatial vector data format for `GIS` software) which, luckily, can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a> as well and consist of both country outlines and state borders. 
 
-To download the shapefiles, download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and load `aust_cd66states.shp` into `R` or, again, use the automated code provided below:
+To obtain the shapefiles, download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and load `aust_cd66states.shp` into `R` or, again, use the automated code provided below:
 
 ```r
 # Download, unzip and import Australian shapefiles
@@ -126,7 +126,7 @@ aus_shp <- readShapeSpatial("aust_cd66states.shp", proj4string = CRS("+proj=long
 unlink(temp)
 ```
 
-For creating a tailor-made map depicting road accidents in South Australia only, we need to subset the state polygon from the spatial *SpatialPolygonsDataFrame* object `aus_shp` (`STE` denotes state).
+For creating a tailor-made map depicting road accidents in South Australia only later on, we need to subset the state polygon from the spatial *SpatialPolygonsDataFrame* object `aus_shp` (`STE` denotes state).
 
 ```r
 # Subset South Australia
@@ -146,7 +146,7 @@ map_theme <- theme_map(base_family = "Avenir") +
         plot.caption = element_text(colour = "grey50")) 
 ```  
 
-and plot the first map depicting all fatal and non-fatal road crashes in South Australia in 2016.     
+and plot the first map showing all fatal and non-fatal road crashes in South Australia in 2016 by running     
     
 ```r
 # Plot road accidents
@@ -161,7 +161,7 @@ ggplot() +
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" vspace="50px"/></p>
 
-Since the accident data at hand only covers crashes in one particular state, we can use the `sa_shp` polygon we already subsetted to restrict the map to the South Australian area
+Since the accident data at hand only covers crashes in one particular state, we use the subsetted `sa_shp` polygon to restrict the map to the South Australian area
 
 ```r
 # Plot road accidents with point sizes adjusted by number of casualties 
@@ -173,7 +173,7 @@ ggplot() +
   scale_size_identity() + coord_equal() 
 ```
 
-which yields the following map where the point sizes reflect the total number of casualties (divided by 1.5 for aesthetic reasons):
+which yields the following map, where the point sizes reflect the total number of casualties (divided by 1.5 for aesthetic reasons):
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot2.png" width="550px" height="500px" vspace="50px"/></p>
 
