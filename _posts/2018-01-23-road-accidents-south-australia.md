@@ -12,7 +12,7 @@ tags:
 - crashes
 ---
 
-<p style="margin-top:60px">Since I may already have acquired a bit of a reputation for being preoccupied with <a href="https://correlaid.org/blog/posts/point-pattern-analysis">accident analyses</a>, I decided to give it another shot and map and analyzes all (non-)fatal road accidents happening in South Australia in 2016.</p> 
+<p style="margin-top:60px">Since I may already have acquired a bit of a reputation for being preoccupied with <a href="https://correlaid.org/blog/posts/point-pattern-analysis">accident analyses</a>, I decided to give it another shot and map and analyze all (non-)fatal road accidents happening in South Australia in 2016.</p> 
 
 Data for this analysis is provided by the <a href="https://data.sa.gov.au/">South Australian Government Data Directory</a>. 
 
@@ -69,7 +69,7 @@ accidents$crash_type[accidents$crash_type == "Left Road - Out of Control"] <- "L
 
 Prior to finally analyzing the accident data, some more geographical data wrangling needs to be done. 
 
-As a first step, we need to choose the right projection for transforming the x and y coordinates provided in the data set into their respective longitude and latitude equivalents. 
+As a first step, we need to choose the right projection for transforming the `x` and `y` coordinates provided in the data set into their respective `longitude` and `latitude equivalents. 
 
 The data itself comes with the following information on the projection (<a href="https://epsg.io/3107">EPSG:3107</a>)
 
@@ -108,9 +108,9 @@ names(accidents)[names(accidents) == "latitude"] <- "lat"
 accidents_df <- as.data.frame(accidents)
 ```
 
-For mapping spatial points adequately we need shapefiles (`.shp`) for Australia, which luckily can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a> as well and consist of both country outlines and state borders. 
+For mapping spatial points adequately we need matching Australian shapefiles (`.shp`; a geospatial vector data format for `GIS` software), which luckily can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a> as well and consist of both country outlines and state borders. 
 
-To download the shapefiles, download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and load `aust_cd66states.shp` into `R` or, again, use an automated code as provided below:
+To download the shapefiles, download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and load `aust_cd66states.shp` into `R` or, again, use the automated code provided below:
 
 ```r
 # Download, unzip and import Australian shapefiles
