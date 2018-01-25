@@ -67,14 +67,31 @@ accidents$crash_type[accidents$crash_type == "Left Road - Out of Control"] <- "L
 
 ## Spatial data wrangling
 
-Prior to analyzing the accident data, some more data wrangling needs to be done.
+Prior to analyzing the accident data, some more data wrangling needs to be done. 
+
+First, we need to choose the right projection for transforming the x and y coordinates in the data set into their respective longitude and latitude equivalents. The data comes with the following information on the projection (a href="https://epsg.io/3107">EPSG:3107</a>)
+
+```
+PROJECTION LAMBERT
+UNITS METERS
+DATUM GDA94 SEVEN /* GDA94 SPHEROID GRS80 PARAMETERS
+-28 00 00 /* 1st standard parallel
+-36 00 00 /* 2nd standard parallel
+135 00 00 /* Central meridian
+-32 00 00 /* Latitude of projections origin
+1000000 /* False easting (meters)
+2000000 /* False northin (meters)
+END
+```
+
+which translates into this `Proj4 string`:
 
 ```r
 # Projection for accident coordinates (EPSG:3107)
 proj <- "+proj=lcc +lat_1=-28 +lat_2=-36 +lat_0=-32 +lon_0=135 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 ```
 
-After setting the right projection, we can transform the accident coordinates to spatial points.
+After setting the right projection, we can then transform the accident coordinates to spatial points using `project()` from the `proj4`package.
 
 ```r
 # Code spatial points and transform to data frame
@@ -89,8 +106,9 @@ names(accidents)[names(accidents) == "latitude"] <- "lat"
 accidents_df <- as.data.frame(accidents)
 ```
 
-Shapefiles (`.shp`) for Australia -- consisting of country outlines and state borders -- can, again, be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a>
-(download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and import `aust_cd66states.shp`) or, again, use an automated code:
+For mapping spatial points adequately we need shapefiles (`.shp`) for Australia, which luckily can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a> as well and consist of both country outlines and state borders. 
+
+To download the shapefiles, download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and load `aust_cd66states.shp` into `R` or, again, use an automated code as provided below:
 
 ```r
 # Download, unzip and import Australian shapefiles
@@ -115,7 +133,7 @@ sa_shp <- subset(aus_shp, STE == 4)
 
 ## Mapping road crashes 
 
-While `ggplot2` maps are nice in themselves, we can make them even nicer by modifying the basic theme in `theme_map()` (inspired by <a href="http://ellisp.github.io/blog/2017/10/15/traffic-crashes">this post</a>) as follows
+While `ggplot2` maps are nice in themselves, inspired by <a href="http://ellisp.github.io/blog/2017/10/15/traffic-crashes">this post</a> we attempt to make them even nicer by modifying the basic theme in `theme_map()` as follows
 
 ``` r
 # Set theme for maps 
