@@ -146,7 +146,7 @@ map_theme <- theme_map(base_family = "Avenir") +
         plot.caption = element_text(colour = "grey50")) 
 ```  
 
-and plot the first map showing all fatal and non-fatal road crashes in South Australia in 2016 by running     
+and plot the first map showing all fatal and non-fatal road crashes in South Australia in 2016.    
     
 ```r
 # Plot road accidents
@@ -182,7 +182,7 @@ which yields the following map, where the point sizes reflect the total number o
 
 After having mapped all road crashes, we can further analyze the data by visualizing some basic statistics. 
 
-As before, we customize the theme of the `ggplot2` map using `theme()` to match the layout of the map we previously built
+As before, we customize the theme of the `ggplot2` map using `theme()` to somewhat match the layout of the map we previously built
 
 ```r
 # Set theme for visualizations
