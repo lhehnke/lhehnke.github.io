@@ -35,7 +35,7 @@ p_load(ggmap, ggplot2, ggthemes, magrittr, maps, mapdata, maptools, proj4, raste
 ```
 ## Downloading and cleaning data
 
-To download the data for the following analysis, either go to the <a href="https://data.sa.gov.au/data/dataset/road-crash-data">South Australian Government Data Directory's website</a> and download `road-crashes-in-sa-2014-16.zip` manually, unzip it and import `2016_DATA_SA_Crash.csv` or run this code directly in `R`:
+To download the data for the subsequent analysis, either go to the <a href="https://data.sa.gov.au/data/dataset/road-crash-data">South Australian Government Data Directory's website</a> and download `road-crashes-in-sa-2014-16.zip` manually, unzip it and import `2016_DATA_SA_Crash.csv` or run this code directly in `R`:
 
 ```r
 # Download, unzip and import data on road crashes in 2016
@@ -50,7 +50,7 @@ accidents <- read_csv("2016_DATA_SA_Crash.csv")
 unlink(temp)
 ```
 
-After downloading and importing the data, some minor cleaning is required.  
+After getting the data into `R`, some minor data cleaning is required.  
 
 ```r
 # Replace blank spaces in column names with underscores and convert letters to lowercase
@@ -67,9 +67,11 @@ accidents$crash_type[accidents$crash_type == "Left Road - Out of Control"] <- "L
 
 ## Spatial data wrangling
 
-Prior to analyzing the accident data, some more data wrangling needs to be done. 
+Prior to finally analyzing the accident data, some more geographical data wrangling needs to be done. 
 
-First, we need to choose the right projection for transforming the x and y coordinates in the data set into their respective longitude and latitude equivalents. The data comes with the following information on the projection (a href="https://epsg.io/3107">EPSG:3107</a>)
+As a first step, we need to choose the right projection for transforming the x and y coordinates provided in the data set into their respective longitude and latitude equivalents. 
+
+The data itself comes with the following information on the projection (<a href="https://epsg.io/3107">EPSG:3107</a>)
 
 ```
 PROJECTION LAMBERT
@@ -84,17 +86,17 @@ DATUM GDA94 SEVEN /* GDA94 SPHEROID GRS80 PARAMETERS
 END
 ```
 
-which translates into this `Proj4 string`:
+which translates into this `Proj4 string` (thanks to the people at *GIS Stack Exchange* for helping me out):
 
 ```r
 # Projection for accident coordinates (EPSG:3107)
 proj <- "+proj=lcc +lat_1=-28 +lat_2=-36 +lat_0=-32 +lon_0=135 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 ```
 
-After setting the right projection, we can then transform the accident coordinates to spatial points using `project()` from the `proj4`package.
+After setting the right projection/coordinate reference system, we can then transform the accident coordinates to spatial points using `project()` from the `proj4` package.
 
 ```r
-# Code spatial points and transform to data frame
+# Code spatial points and convert to data frame
 points <- proj4::project(accidents[, c("accloc_x", "accloc_y")], proj = proj, inverse = TRUE)
 
 accidents$longitude <- points$x
