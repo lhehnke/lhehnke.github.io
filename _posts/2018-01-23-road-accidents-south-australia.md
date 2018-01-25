@@ -86,7 +86,7 @@ DATUM GDA94 SEVEN /* GDA94 SPHEROID GRS80 PARAMETERS
 END
 ```
 
-which translates into this `Proj4 string` (thanks to the people at *GIS Stack Exchange* for helping me out):
+which translates into this `Proj4 string` (thanks to the people over at <a href="https://gis.stackexchange.com/">GIS Stack Exchange</a> for helping me out on this one):
 
 ```r
 # Projection for accident coordinates (EPSG:3107)
@@ -161,7 +161,7 @@ ggplot() +
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" vspace="50px"/></p>
 
-Since our accident data only covers crashes in one particular state, we can use the `sa_shp` polygon we already subsetted to restrict the map to the South Australian area
+Since the accident data at hand only covers crashes in one particular state, we can use the `sa_shp` polygon we already subsetted to restrict the map to the South Australian area
 
 ```r
 # Plot road accidents with point sizes adjusted by number of casualties 
