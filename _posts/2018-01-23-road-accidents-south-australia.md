@@ -50,7 +50,7 @@ accidents <- read_csv("2016_DATA_SA_Crash.csv")
 unlink(temp)
 ```
 
-After getting the data into `R`, some minor data cleaning is required.  
+After getting the data into `R` some minor data cleaning is required.  
 
 ```r
 # Replace blank spaces in column names with underscores and convert letters to lowercase
@@ -69,7 +69,7 @@ accidents$crash_type[accidents$crash_type == "Left Road - Out of Control"] <- "L
 
 Prior to finally analyzing the accident data, some more geographical data wrangling needs to be done. 
 
-As a first step, we need to choose the right projection for transforming the `x` and `y` coordinates provided in the data set into their respective `longitude` and `latitude equivalents. 
+As a first step we need to choose the right projection for transforming the `x` and `y` coordinates provided in the data set into their respective `longitude` and `latitude equivalents. 
 
 The data itself comes with the following information on the projection (<a href="https://epsg.io/3107">EPSG:3107</a>)
 
@@ -108,7 +108,7 @@ names(accidents)[names(accidents) == "latitude"] <- "lat"
 accidents_df <- as.data.frame(accidents)
 ```
 
-In order to map the spatial points, we need matching Australian shapefiles (`.shp`; a geospatial vector data format for `GIS` software) which, luckily, can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a> as well and consist of both country outlines and state borders. 
+In order to map the spatial points we need matching Australian shapefiles (`.shp`; a geospatial vector data format for `GIS` software), which luckily can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a> as well and consist of both country outlines and state borders. 
 
 To obtain the shapefiles, download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and load `aust_cd66states.shp` into `R` or, again, use the automated code provided below:
 
@@ -126,7 +126,7 @@ aus_shp <- readShapeSpatial("aust_cd66states.shp", proj4string = CRS("+proj=long
 unlink(temp)
 ```
 
-For creating a tailor-made map depicting road accidents in South Australia only later on, we need to subset the state polygon from the spatial *SpatialPolygonsDataFrame* object `aus_shp` (`STE` denotes state).
+For creating a tailor-made map depicting road accidents in South Australia only, we need to subset the state polygon from the spatial `SpatialPolygonsDataFrame` object `aus_shp` (`STE` denotes state).
 
 ```r
 # Subset South Australia
@@ -135,7 +135,7 @@ sa_shp <- subset(aus_shp, STE == 4)
 
 ## Mapping road crashes 
 
-While `ggplot2` maps are nice in themselves, inspired by <a href="http://ellisp.github.io/blog/2017/10/15/traffic-crashes">this post</a> we attempt to make them even nicer by modifying the basic theme in `theme_map()` as follows
+While `ggplot2` maps are nice in themselves, inspired by <a href="http://ellisp.github.io/blog/2017/10/15/traffic-crashes">this post</a>, we attempt to make them even nicer by modifying the basic theme in `theme_map()` as follows
 
 ``` r
 # Set theme for maps 
