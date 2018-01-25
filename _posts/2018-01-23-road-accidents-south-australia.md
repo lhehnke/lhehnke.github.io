@@ -50,7 +50,7 @@ accidents <- read_csv("2016_DATA_SA_Crash.csv")
 unlink(temp)
 ```
 
-After downloading and importing the data, some minor data wrangling is required.  
+After downloading and importing the data, some minor cleaning is required.  
 
 ```r
 # Replace blank spaces in column names with underscores and convert letters to lowercase
@@ -67,7 +67,7 @@ accidents$crash_type[accidents$crash_type == "Left Road - Out of Control"] <- "L
 
 ## Spatial data wrangling
 
-Add text on projections
+Prior to analyzing the accident data, some more data wrangling needs to be done.
 
 ```r
 # Projection for accident coordinates (EPSG:3107)
@@ -89,7 +89,7 @@ names(accidents)[names(accidents) == "latitude"] <- "lat"
 accidents_df <- as.data.frame(accidents)
 ```
 
-Shapefiles (`.shp`) for Australia -- consisting of country outlines and state borders -- can be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a>
+Shapefiles (`.shp`) for Australia -- consisting of country outlines and state borders -- can, again, be found at the <a href="http://data.daff.gov.au/anrdl/metadata_files/pa_nsaasr9nnd_02211a04.xml">South Australian Government Data Directory's website</a>
 (download `nsaasr9nnd_02211a04es_geo___.zip`, unzip it and import `aust_cd66states.shp`) or, again, use an automated code:
 
 ```r
@@ -106,7 +106,7 @@ aus_shp <- readShapeSpatial("aust_cd66states.shp", proj4string = CRS("+proj=long
 unlink(temp)
 ```
 
-For creating a tailor-made map depicting road accidents in South Australia only, we need to subset the state polygon from the spatial *SpatialPolygonsDataFrame* object `aus_shp`.
+For creating a tailor-made map depicting road accidents in South Australia only, we need to subset the state polygon from the spatial *SpatialPolygonsDataFrame* object `aus_shp` (`STE` denotes state).
 
 ```r
 # Subset South Australia
@@ -115,7 +115,7 @@ sa_shp <- subset(aus_shp, STE == 4)
 
 ## Mapping road crashes 
 
-While `ggplot2` maps are nice in themselves, we can make them even nicer by modifying the basic theme in `theme_map()` as follows (inspired by <a href="http://ellisp.github.io/blog/2017/10/15/traffic-crashes">this post</a>):
+While `ggplot2` maps are nice in themselves, we can make them even nicer by modifying the basic theme in `theme_map()` (inspired by <a href="http://ellisp.github.io/blog/2017/10/15/traffic-crashes">this post</a>) as follows
 
 ``` r
 # Set theme for maps 
@@ -141,7 +141,7 @@ ggplot() +
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot1_orig.png" width="550px" height="500px" vspace="50px"/></p>
 
-Since our accident data only covers crashes in one particular state, we use the `sa_shp` polygon we already subsetted to restrict the map to the South Australian area
+Since our accident data only covers crashes in one particular state, we can use the `sa_shp` polygon we already subsetted to restrict the map to the South Australian area
 
 ```r
 # Plot road accidents with point sizes adjusted by number of casualties 
@@ -162,7 +162,7 @@ which yields the following map where the point sizes reflect the total number of
 
 After having mapped all road crashes, we can further analyze the data by visualizing some basic statistics. 
 
-As before, we customize the theme of our maps using `theme()` to match the layout of the maps we previously built.
+As before, we customize the theme of the `ggplot2` map using `theme()` to match the layout of the map we previously built
 
 ```r
 # Set theme for visualizations
@@ -174,7 +174,7 @@ viz_theme <- theme(
   text = element_text(family = "Avenir"))
 ```
 
-Now we can create a nice looking plot of the total number of crashes by crash type and severity of crash (fatal/non-fatal) by running  
+and make a nice looking graph of the total number of crashes by crash type and severity of crash (fatal/non-fatal) by running  
   
 ```r
 # Plot number of crashes by crash type and severity
@@ -194,7 +194,7 @@ and thus creating this plot:
 
 In a similar manner, we can make another bar chart for the number of casualties by crash type. Prior to plotting, however, we need to calculate the corresponding numbers first. 
 
-As a bonus feature we can rearrange the bars of the plot by ordering the crash types by number of casualties in ascending order.
+As a bonus feature we now rearrange the bars of the plot by ordering the crash types by number of casualties in ascending order.
 
 ```r
 # Calculate total number of casualties by crash type
@@ -217,13 +217,13 @@ ggplot(accidents_cas_ordered, aes(crash_type, total_cas)) +
   viz_theme + ylim(0, 2000) 
 ```
 
-These three chunks of code then produce the following plot.
+These three chunks of code then produce the following plot:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot4.png" width="550px" height="500px" vspace="50px"/></p>
  
 ## Bonus: Visualizing casualties via lollipop chart
  
-While browsing <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">this site</a>, I found both inspiration and sample codes for making some #dataviz magic happen.
+While browsing <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">this site</a>, I found both inspiration and sample codes for making some *#dataviz* magic happen.
 
 As a result, I decided to complement the previous plot with its more modern looking lollipop chart version.
  
@@ -240,8 +240,6 @@ ggplot(accidents_cas, aes(x = crash_type, y = total_cas)) +
  ```
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/road-accidents/plot5b.png" width="550px" height="500px" vspace="50px"/></p>
-
-Conclusion
 
 ***Note:** The above code is only a (slightly adapted) snippet of the full script, which can be found <a href="https://github.com/lhehnke/road-accidents">here</a>.*
 
