@@ -146,7 +146,7 @@ map_theme <- theme_map(base_family = "Avenir") +
         plot.caption = element_text(colour = "grey50")) 
 ```  
 
-and plot the first map showing all fatal and non-fatal road crashes in South Australia in 2016.    
+and plot the first map showing all fatal and non-fatal road crashes in South Australia in 2016. (Note that several points lie outside the polygon.)    
     
 ```r
 # Plot road accidents
