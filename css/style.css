@@ -72,6 +72,11 @@ ul.swatch li:first-child { webkit-border-top-left-radius: 9px; -webkit-border-bo
 ul.listcv { margin: 0 auto; }
 ul.listcv li {line-height: 26px; } 
 
+/* Blogroll */
+.blogroll {width: 90%; margin: 0 auto; }
+ul.blognotes { margin: 0 auto; }
+ul.blognotes li {line-height: 30px; } 
+
 /* Projects */
 .projects {line-height: 26px; width: 90%; margin: 0 auto;}
 
