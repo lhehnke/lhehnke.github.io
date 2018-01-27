@@ -1,6 +1,7 @@
 permalink: /notes/:year/:month/:day/:title
 markdown: kramdown
-name: Lisa Hehnke's Blog
+name: Data Science Blog by Lisa Hehnke
+description: Lisa Hehnke is a researcher, data scientist, psychology student, and aviation enthusiast living and working in Hamburg.
 url: http://lhehnke.github.io
 
 highlighter: rouge
