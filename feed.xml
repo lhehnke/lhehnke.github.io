@@ -21,7 +21,6 @@ layout: feed
    <link href="http://lhehnke.github.io{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://lhehnke.github.io/notes{{ post.id }}</id>
-   <guid isPermaLink="true">{{ post.url | relative_url }}</guid>
    <description>{{ post.content | xml_escape }}</description>
    <content type="html">{{ post.excerpt | xml_escape }}</content>
  </entry>
