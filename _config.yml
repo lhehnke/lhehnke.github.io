@@ -1,7 +1,7 @@
 permalink: /notes/:year/:month/:day/:title
 markdown: kramdown
 name: lhehnke.github.io | Data Science Blog by Lisa Hehnke
-description: Lisa Hehnke is a researcher, data scientist, psychology student, and aviation enthusiast living and working in Hamburg.
+description: Lisa Hehnke is a researcher turned data scientist, psych student, and aviation enthusiast from Hamburg, Germany. Her work mainly focuses on spatial analyses, computational social science, and serial killers.
 url: http://lhehnke.github.io
 
 highlighter: rouge
