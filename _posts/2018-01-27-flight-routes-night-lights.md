@@ -25,9 +25,9 @@ did it, <a href="https://www.r-bloggers.com/how-to-draw-connecting-routes-on-map
 Yet, as an aviation enthusiast, I couldn't resist laying my hands on this kind of data, especially after stumbling across 
 <a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's</a> call for more visualizations featuring some sort of lighting effect. While Weimin used urban data to achieve the effect in his maps, I will draw on night lights images provided by the <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA Earth Observatory</a>.
 
-Despite me being the *n*th person working with *OpenFlights* data, most of the previous analyses don't seem to start from scratch, i.e., by downloading the raw `.dat` files straigth from their website and processing it prior to mapping. Hence, the code below will guide you through both these initial steps and demonstrate how to create nice looking maps like this one
+Despite me being the *n*th person working with *OpenFlights* data, most of the previous approaches don't seem to start from scratch, i.e., by downloading the raw `.dat` files straigth from their website and processing it prior to mapping. Hence, the code below will guide you through both these initial steps and demonstrate how to create nice looking maps like this one
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327x" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="40px"/></p>
 
 using *OpenFlights* data in combination with *NASA* images. 
 
@@ -188,7 +188,7 @@ ggplot() +
 ggsave("Lufthansa.png", width = 36, height = 18, units = "in", dpi = 100)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Lufthansa.png" width="655px" height="327x" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Lufthansa.png" width="655px" height="327px" vspace="40px"/></p>
 
 The next two maps can be created by simply changing the airline name for subsetting the data in `geom_path()` and `geom_point`() to whichever airline you'd like to plot, i.e., `flights_fortified[flights_fortified$name == "AIRLINE NAME", ]` and `flights_points[flights_points$name == "AIRLINE NAME", ]`.
 
@@ -218,7 +218,7 @@ ggplot() +
 ggsave("Emirates.png", width = 36, height = 18, units = "in", dpi = 100)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Emirates.png" width="655px" height="327x" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Emirates.png" width="655px" height="327px" vspace="40px"/></p>
 
 ### 3. British Airways
 
@@ -246,7 +246,7 @@ ggplot() +
 ggsave("British_Airways.png", width = 36, height = 18, units = "in", dpi = 100)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/British_Airways_new.png" width="655px" height="327x" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/British_Airways_new.png" width="655px" height="327px" vspace="40px"/></p>
 
 ## Mapping multiple airlines' flight routes
 
@@ -294,6 +294,6 @@ ggsave("Airlines.png", width = 36, height = 18, units = "in", dpi = 100)
 
 This last chunk of code will finally get you the map shown right at the beginning: 
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327x" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="40px"/></p>
 
 And to end this post in the style of a famous American travel author and TV host: *"Keep on mappin'! Ciao."* 

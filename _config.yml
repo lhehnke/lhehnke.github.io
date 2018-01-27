@@ -1,8 +1,22 @@
 permalink: /notes/:year/:month/:day/:title
 markdown: kramdown
-name: lhehnke.github.io | Data Science Blog by Lisa Hehnke
+title: lhehnke.github.io | Data Science Blog by Lisa Hehnke
 description: Lisa Hehnke is a researcher turned data scientist, psych student, and aviation enthusiast from Hamburg, Germany. Her work mainly focuses on spatial analyses, computational social science, and serial killers.
 url: http://lhehnke.github.io
+
+#logo: logo.png
+
+share: true
+feed: true
+
+owner:
+  name:           Lisa Hehnke
+  avatar:         lhehnke_bw2.jpg
+  email:          lisa.hehnke@googlemail.com
+  twitter:        aaashitak
+  github:         lhehnke    
+
+google_analytics: UA-113150251-1
 
 highlighter: rouge
 
@@ -12,9 +26,8 @@ kramdown:
   syntax_highlighter: rouge
   hard_wrap: false
   
-plugins:
-  - jekyll-feed
-
 gems:
   - jemoji
   - jekyll-feed
+  - jekyll-sitemap
+  
