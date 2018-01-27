@@ -10,9 +10,7 @@ kramdown:
   auto_ids: true
   syntax_highlighter: rouge
   hard_wrap: false
-  
-plugins:
-  - jekyll-feed
-  
+
 gems:
   - jemoji
+    - jekyll-feed
