@@ -1,10 +1,14 @@
 ---
 layout: post
 title: "Mapping and analyzing road accidents in South Australia"
+excerpt_separator: "<!--more-->"
 date: "January 23, 2018"
 type: post
 published: true
 status: publish
+categories:
+- accident analysis
+- maps
 tags:
 - rstats
 - road accidents
@@ -16,6 +20,7 @@ tags:
 
 Data for this analysis is provided by the <a href="https://data.sa.gov.au/">South Australian Government Data Directory</a>. 
 
+<!--more-->
 
 ## Setup
 
@@ -31,8 +36,8 @@ library(pacman)
 
 # Load packages
 p_load(ggmap, ggplot2, ggthemes, magrittr, maps, mapdata, maptools, proj4, raster, rgdal, sp, stringr, tidyverse)
-
 ```
+
 ## Downloading and cleaning data
 
 To download the data for the subsequent analysis, either go to the <a href="https://data.sa.gov.au/data/dataset/road-crash-data">South Australian Government Data Directory's website</a> and download `road-crashes-in-sa-2014-16.zip` manually, unzip it and import `2016_DATA_SA_Crash.csv` or run this code directly in `R`:
