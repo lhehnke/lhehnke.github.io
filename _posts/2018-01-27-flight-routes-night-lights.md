@@ -23,7 +23,7 @@ tags:
 did it, <a href="https://www.r-bloggers.com/how-to-draw-connecting-routes-on-map-with-r-and-great-circles/">R bloggers</a> did it, and <a href="http://spatial.ly/2013/05/great-world-flight-paths-map/">Spatial.ly</a> wrote about someone who did it.</p>  
 
 Yet, as an aviation enthusiast, I couldn't resist laying my hands on this kind of data, especially after stumbling across 
-<a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's</a> call for more visualizations featuring some sort of lighting effect. While Weimin used urban data to achieve the effect in his maps, I will draw on night lights images provided by <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA's Earth Observatory</a>.
+<a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's</a> call for more visualizations featuring some sort of lighting effect. While Weimin used urban data to achieve the effect in his maps, I will draw on night lights images provided by the <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA Earth Observatory</a>.
 
 Despite me being the *n*th person working with *OpenFlights* data, most of the previous analyses don't seem to start from scratch, i.e., by downloading the raw `.dat` files straigth from their website and processing it prior to mapping. Hence, the code below will guide you through both these initial steps and demonstrate how to create nice looking maps like this one
 
@@ -296,4 +296,4 @@ This last chunk of code will finally get you the map shown right at the beginnin
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327x" vspace="40px"/></p>
 
-And to end this post with the (slightly modified) words of a famous man: *"Keep on mappin'! Ciao."* 
+And to end this post in the style of a famous American travel author and TV host: *"Keep on mappin'! Ciao."* 
