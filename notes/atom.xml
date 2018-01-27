@@ -4,7 +4,7 @@ layout: feed
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Notes from Lisa Hehnke</title>
+ <title>Data Science Blog by Lisa Hehnke</title>
  <link href="http://lhehnke.github.io/notes/atom.xml" rel="self"/>
  <link href="http://lhehnke.github.io/notes/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
