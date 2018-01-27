@@ -25,14 +25,14 @@ Yet, as an aviation enthusiast, I couldn't resist laying my hands on this kind o
 <a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's call for action</a> for further visualizations featuring some sort of lighting effect. 
 While Weimin used urban data to achieve the effect in his maps, I will draw on night lights images provided by <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA's Earth Observatory</a>.
 
-<!--more-->
-
 In addition, despite me being the *n*th person to approach the general topic of working with *OpenFlights* data, most of the previous analyses don't seem to start from scratch, i.e., by downloading the raw `.dat` files 
 straigth from their website and processing it prior to mapping. The code provided below guides you through both these initial steps and demonstrates how to create nice looking maps like this one
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines.png" width="655px" height="327x" vspace="40px"/></p>
 
 using *OpenFlights* data in combination with *NASA* images. 
+
+<!--more-->
 
 Given the bulk of tutorials on flight data, the blog post itself contains rather technical instructions. For more detailed explanations on the prerequisites and foundations of spatial mapping using `R` see the aforementioned links.
 
