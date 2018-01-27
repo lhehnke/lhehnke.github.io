@@ -6,7 +6,22 @@ url: http://lhehnke.github.io
 
 #logo: logo.png
 
-share: true
+share-links-active:
+  twitter: true
+  facebook: true
+  google: true
+ linkedin: true
+ 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false  # add comments to all blog posts
+social-share: true # add social media sharing buttons to all blog posts
+
 feed: true
 
 owner:
