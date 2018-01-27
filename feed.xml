@@ -6,22 +6,24 @@ layout: feed
  
  <title>lhehnke.github.io | Data Science Blog by Lisa Hehnke</title>
  <subtitle>Lisa Hehnke is a researcher, data scientist, psychology student, and aviation enthusiast living and working in Hamburg.</subtitle>
- <link href="http://lhehnke.github.io/notes/atom.xml" rel="self"/>
- <link href="http://lhehnke.github.io/notes/"/>
+ <link href="http://lhehnke.github.io/feed.xml" rel="self"/>
+ <link href="http://lhehnke.github.io/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://lhehnke.github.io/notes/</id>
+ <id>http://lhehnke.github.io/</id>
  <author>
    <name>Lisa Hehnke</name>
    <email>lisa.hehnke@uni-hamburg.de</email>
  </author>
 
- {% for post in site.posts limit:15 %}
+ {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="http://lhehnke.github.io{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://lhehnke.github.io/notes{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <guid isPermaLink="true">{{ post.url | relative_url }}</guid>
+   <description>{{ post.content | xml_escape }}</description>
+   <!--<content type="html">{{ post.content | xml_escape }}</content>-->
  </entry>
  {% endfor %}
  
