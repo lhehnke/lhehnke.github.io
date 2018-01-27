@@ -1,10 +1,15 @@
 ---
 layout: post
 title: "Mining the screenplay of The Room"
+excerpt_separator: "<!--more-->"
 date: "January 25, 2018"
 type: post
 published: true
 status: publish
+categories:
+- text mining
+- rstats
+- sentiment analysis
 tags:
 - rstats
 - text mining
@@ -18,6 +23,8 @@ tags:
 And since the movie features such Shakespearian quotes as *"I did not hit her, it's not true! It's bullshit! I did not hit her! I did naaht! Oh hi, Mark"*, we joked about mining the screenplay for other hidden gems.
 
 Well, no sooner said than done.
+
+<!--more-->
  
 ## Setup
 
@@ -185,7 +192,7 @@ ggplot(bing_counts_plot, aes(word, n, fill = sentiment)) +
   coord_flip()
   ```
   
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot3.png" width="550px" height="500px" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot3.png" width="650px" height="500px" vspace="50px"/></p>
 
 As the second sentiment graph shows, the most common positive words in The Room are "love", "happy", and "fine", while the most common negative words are "worry", "crazy", and "wrong". 
   
