@@ -21,6 +21,7 @@ layout: feed
    <link href="http://lhehnke.github.io{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://lhehnke.github.io/notes{{ post.id }}</id>
+   <!--<description>{{ post.content | xml_escape }}</description>-->
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
