@@ -208,4 +208,9 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
     background-color: #444444;
 }
 
+ 
+ 
 
+.about-desc {
+    padding-bottom: 5vh;
+}
