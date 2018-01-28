@@ -1,71 +1,106 @@
 <div class="share-page">
 
-<!-- <section id="social-share-section"> -->
-  
-<span class="sr-only">Share: </span> 
-
-  <!--- Share on Twitter -->
-    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
-    onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-    class="btn btn-social-icon btn-twitter" title="Share on Twitter">
-      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
-      <span class="sr-only">Twitter</span>
-      </a>
-
-    <!--- Share on Facebook -->
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
-      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-    class="btn btn-social-icon btn-facebook" title="Share on Facebook">
-      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
-      <span class="sr-only">Facebook</span>
-      </a>
+    <div class="share-buttons">
       
-    <!--- Share on Google Plus -->
-      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
-      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-    class="btn btn-social-icon btn-google" title="Share on Google+">
-      <span class="fa fa-fw fa-google-plus" aria-hidden="true"></span>
-      <span class="sr-only">Google+</span>
-      </a>
+              <a  href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Twitter" >
+            <span class="fa fa-twitter share-button" aria-hidden="true"></span>
+        </a>
+
+      
+        <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Facebook" >
+            <span class="fa fa-facebook-official share-button" aria-hidden="true"></span>
+        </a>
 
 
-    <!--- Share on LinkedIn -->
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
-      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-    class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
-      <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
-      <span class="sr-only">LinkedIn</span>
-      </a>
- </div>
+        <a  href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Google+" >
+            <span class="fa fa-google-plus share-button" aria-hidden="true"></span>
+        </a>
 
 
-<!-- </section> -->
+        <a  href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on LinkedIn" >
+            <span class="fa fa-linkedin share-button" aria-hidden="true"></span>
+        </a>
 
+    </div>
+
+</div>
 
 <style>
-.page__share {
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid $border-color;
-
-  @include breakpoint(max-width $small) {
-    .btn span {
-      border: 0;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-  }
+/* Share Bar */
+#share-bar {
+    font-size: 14px;
 }
 
-.page__share-title {
-  margin-bottom: 10px;
-  font-size: $type-size-6;
-  text-transform: uppercase;
-} 
+/* Title */
+#share-bar h4 {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
 
-</style>
+/* All buttons */
+.share-buttons {
+}
+
+/* Each button */
+.share-button {
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-right: 3px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px; 
+}
+.share-button:hover {
+    opacity: 1;
+    color: #ffffff;
+}
+
+/* Facebook button */
+.fa-facebook-official {
+    color: #3b5998;
+}
+.fa-facebook-official:hover {
+    background-color: #3b5998;
+}
+
+/* Twitter button */
+.fa-twitter {
+    color: #55acee;
+}
+.fa-twitter:hover {
+    background-color: #55acee;
+}
+
+/* Google-PLus button */
+.fa-google-plus {
+    color: #dd4b39;
+}
+.fa-google-plus:hover {
+    background-color: #dd4b39;
+}
+
+
+/* LinkedIn button */
+.fa-linkedin {
+    color: #007bb5;
+}
+.fa-linkedin:hover {
+    background-color: #007bb5;
+}
+
+/* Email button */
+.fa-envelope {
+    color: #444444;
+}
+.fa-envelope:hover {
+    background-color: #444444;
+}
+</style> 
