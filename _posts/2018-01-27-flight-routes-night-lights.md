@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Flights at Night: Mapping airline routes on NASA's night lights images"
-excerpt_separator: "<!--more-->"
 date: "January 27, 2018"
 type: post
 published: false

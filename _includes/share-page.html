@@ -1,38 +1,37 @@
 <div class="share-page">
 
-    <!-- <div class="share-buttons"> -->
+     <div class="share-buttons2"> 
       
               <a  href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Twitter" style="text-decoration:none">
-            <i class="fa fa-twitter share-button" aria-hidden="true"></i>
+            <i class="fa fa-twitter share-button2" aria-hidden="true"></i>
         </a>
 
       
         <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Facebook" style="text-decoration:none">
-            <i class="fa fa-facebook-official share-button" aria-hidden="true"></i>
+            <i class="fa fa-facebook-official share-button2" aria-hidden="true"></i>
         </a>
 
 
         <a  href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Google+" style="text-decoration:none">
-            <i class="fa fa-google-plus share-button" aria-hidden="true"></i>
+            <i class="fa fa-google-plus share-button2" aria-hidden="true"></i>
         </a>
 
 
         <a  href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on LinkedIn" style="text-decoration:none">
-            <i class="fa fa-linkedin share-button" aria-hidden="true"></i>
+            <i class="fa fa-linkedin share-button2" aria-hidden="true"></i>
         </a>
 
     </div>
 
-<!-- </div> -->
-
+ </div> 
 <style>
 
 
@@ -48,19 +47,19 @@
 }
 
 /* All buttons */
-.share-buttons {
+.share-buttons2 {
 }
 
 /* Each button */
-.share-button {
+.share-button2 {
     margin: 0px;
     margin-bottom: 6px; /* 10 */
     margin-right: 3px;
-    border: 1px solid #D3D6D2;
+    border: none;
     padding: 5px 10px 5px 10px;
     border-radius: 4px; 
 }
-.share-button:hover {
+.share-button2:hover {
     opacity: 1;
     color: #ffffff;
 }
