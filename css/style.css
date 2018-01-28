@@ -125,9 +125,8 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
     background: $secondary-color;
     color: $light-color;
     padding: 8px 15px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     margin: 1.5 * $spacing-unit 0;
-   
    font-weight: 700; 
    color: #fff; 
    margin-left: 10px; &:hover { border-bottom: 1px dashed #fff; }}  
