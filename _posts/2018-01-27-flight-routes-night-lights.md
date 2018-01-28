@@ -18,17 +18,15 @@ tags:
 - maps
 ---
 
-<p style="margin-top:60px">Admittedly, mapping airline routes using the well-known <a href="https://openflights.org/data.html">OpenFlights.org</a> data sets is neither a bold move nor that innovative. <a href="https://flowingdata.com/2011/05/11/how-to-map-connections-with-great-circles/">FlowingData</a>
-did it, <a href="https://www.r-bloggers.com/how-to-draw-connecting-routes-on-map-with-r-and-great-circles/">R bloggers</a> did it, and <a href="http://spatial.ly/2013/05/great-world-flight-paths-map/">Spatial.ly</a> wrote about someone who did it.</p>  
+Admittedly, mapping airline routes using flight data is neither a bold move nor that innovative. <a href="http://flowingdata.com/2011/05/05/where-do-major-airlines-fly-in-the-united-states/">FlowingData</a> did it, <a href="https://www.r-bloggers.com/how-to-draw-connecting-routes-on-map-with-r-and-great-circles/">R bloggers</a> did it, <a href="http://spatial.ly/2012/06/mapping-worlds-biggest-airlines/">Spatial.ly</a> did it (and even <a href="http://spatial.ly/2013/05/great-world-flight-paths-map/">wrote about</a> someone who did it). 
 
-Yet, as an aviation enthusiast, I couldn't resist laying my hands on this kind of data, especially after stumbling across 
-<a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's</a> call for more visualizations featuring some sort of lighting effect. While Weimin used urban data to achieve the effect in his maps, I will draw on night lights images provided by the <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA Earth Observatory</a>.
+Yet, as an aviation enthusiast, I couldn't resist laying my hands on this kind of data, especially after stumbling across <a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's</a> call for more visualizations featuring some sort of lighting effect. While Weimin used urban data to achieve this effect, I will draw on night lights images provided by the <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA Earth Observatory</a>.
 
-Despite me being the *n*th person working with *OpenFlights* data, most of the previous approaches don't seem to start from scratch, i.e., by downloading the raw `.dat` files straigth from their website and processing it prior to mapping. Hence, the code below will guide you through both these initial steps and demonstrate how to create nice looking maps like this one
+Despite me being the *n*th person working with flight data, most of the previous approaches don't seem to start from scratch, i.e., by downloading raw data straigth from the internet and processing it prior to mapping. Hence, the code below will guide you through both these initial steps and demonstrate how to create nice looking maps like this one
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="40px"/></p>
 
-using *OpenFlights* data in combination with *NASA* images. 
+using href="https://openflights.org/data.html">OpenFlights data</a> in combination with *NASA* images. 
 
 <!--more-->
 
@@ -36,9 +34,7 @@ Given the bulk of tutorials on flight data, the blog post itself contains rather
 
 ## Setup
 
-In order to visualize *OpenFlights* airline routes, you need the packages `data.table`, `geosphere`, `ggplot2`, `grid`, `maps`, `jpeg`, `plyr`, and `tidyverse`.
-
-As usual, I used `p_load()` from the `pacman` package to load the required libraries at once.
+In order to visualize flight routes, you'll need `data.table`, `geosphere`, `ggplot2`, `grid`, `maps`, `jpeg`, `plyr`, and `tidyverse`. As usual, I used `p_load()` from the `pacman` package to load the required libraries at once.
 
 ```r
 # Install and load pacman if not already installed
@@ -68,7 +64,7 @@ airports <- fread("airports.dat", sep = ",")
 routes <- fread("routes.dat", sep = ",")
 ```
 
-After obtaining the raw data, some cleaning and merging needs to be done first.  
+After obtaining the raw data, some wrangling on the non-spatial parts of the data needs to be done first.  
 
 ```r
 # Add column names
@@ -100,7 +96,7 @@ flights <- na.omit(flights, cols = c("source_airport_long", "source_airport_lat"
 
 ## Spatial data wrangling
 
-EXPLANATION
+Concerning the spatial part of the data wrangling process, the aim here is to visualize geographic connections (i.e., flights) between spatial points (i.e., airports) by drawing creat circle lines between them, which can be done by using the `gcIntermediate()` function from the `geosphere` package (click href="http://flowingdata.com/2011/05/11/how-to-map-connections-with-great-circles/">here</a> for a more detailed tutorial on this topic). 
 
 ```r
 # Split the data into separate data sets
@@ -127,13 +123,11 @@ flights_points <- flights_fortified %>%
   filter(row_number() == 1 | row_number() == n())
 ```
 
-EXPLANATION ON GREAT CIRCLE DISTANCES & CHOICE OF AIRLINES (domination of US carriers in real-life but not in maps)
-
 ## Processing NASA's night lights image
 
-As mentioned at the beginning, all maps in this blog post use NASA's so-called *night lights* images, i.e., satellite images of the Earth at night as raster objects. You can import `.jpg` files to `R` with the `readJPEG()`function from the `jpeg` package and render them with `rasterGrob` from the `grid` graphics package.
+As mentioned at the beginning, all maps in this blog post use NASA's so-called *night lights* images, i.e., satellite images of the Earth at night, as raster objects (image credit: <a href="https://earthobservatory.nasa.gov/">NASA Earth Observatory</a). 
 
-(Image credit: <a href="https://earthobservatory.nasa.gov/">NASA Earth Observatory</a)
+You can import `.jpg` files to `R` with the `readJPEG()`function from the `jpeg` package and render them with `rasterGrob` from the `grid` graphics package. Alternatively, you can use `GeoTIFF` files for a higher resolution and, if available, additional geospatial metadata.  
 
 ```r
 # Download NASA Night Lights image
@@ -147,21 +141,24 @@ earth <- rasterGrob(earth, interpolate = TRUE)
 
 ## Mapping airline routes on night lights
 
-While writing the code for the final maps, I wanted to step up my `#dataviz` game and try to mimic the airlines' logos by customizing both text colors and fonts. After conducting a quick Google search I decided on the following parameters, which come quite close to the original logos:
+While editing the code for the final maps, I wanted to step up my `#dataviz` game and try to mimic the airlines' logos by customizing both text colors and fonts. The airlines below were chosen for no particular reason other than being my favourite airline (Lufthansa) or having nicely constructed flight routes and visually appealing company colors that make for some great lighting effects (the other two). 
+
+After conducting a quick Google search, I decided on the following parameters, which come quite close to the original logos:
 * Lufthansa: `Helvetica black`; `#f9ba00`
 * Emirates: `Fontin`; `#ff0000`
-* British Airways: `#075aaa`; `Baker Signet Std`
+* British Airways: `Baker Signet Std`; `#075aaa`
 
-In `R`, adding customized fonts can be achieved with the `extrafont` package.
+In `R`, using fonts other than the basic PostScript fonts can be done by importing them with the `extrafont` package.
+
 ```r
 #install.packages("extrafont")
 #library(extrafont)
-#font_import(paths = "/Users/Lisa/Desktop/fonts", prompt = F)
+#font_import()
 ```
 
-### 1. Lufthansa
+After importing NASA's night lights image and (optionally) adjusting the text parameters, you can now build a map of the airlines' routes by stacking the single layers of the map, modify its default theme and annotate it.
 
-EXLANATION
+### 1. Lufthansa
 
 ```r
 ggplot() +
@@ -189,7 +186,7 @@ ggsave("Lufthansa.png", width = 36, height = 18, units = "in", dpi = 100)
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Lufthansa.png" width="655px" height="327px" vspace="40px"/></p>
 
-The next two maps can be created by simply changing the airline name for subsetting the data in `geom_path()` and `geom_point`() to whichever airline you'd like to plot, i.e., `flights_fortified[flights_fortified$name == "AIRLINE NAME", ]` and `flights_points[flights_points$name == "AIRLINE NAME", ]`.
+The next two maps can be created in almost the same manner by simply changing the airline name when subsetting the data in `geom_path()` and `geom_point`() to whichever airline's routes you'd like to plot. For instance: `flights_fortified[flights_fortified$name == "AIRLINE NAME", ]` and `flights_points[flights_points$name == "AIRLINE NAME", ]`.
 
 ### 2. Emirates
 
