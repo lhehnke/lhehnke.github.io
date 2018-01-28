@@ -296,4 +296,6 @@ This last chunk of code will finally get you the map shown right at the beginnin
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="40px"/></p>
 
-And to end this post in the style of a famous American TV host and travel author: *"Keep on mappin'! Ciao."* 
+And to end this post in the style of a famous American TV host and travel author: 
+
+*"Keep on mappin'! Ciao."* 
