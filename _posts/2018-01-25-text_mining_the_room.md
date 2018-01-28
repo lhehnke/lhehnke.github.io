@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Mining the screenplay of The Room"
-excerpt_separator: "<!--more-->"
 date: "January 25, 2018"
 type: post
 published: true
@@ -18,7 +17,7 @@ tags:
 ---
 
 
-<p style="margin-top:60px">While sitting in the office, my colleague <a href="https://www.wiso.uni-hamburg.de/fachbereich-sowi/professuren/schnapp/team/dietrich-brian.html">Brian</a> and I stumbled upon this dead-on <a href="https://www.youtube.com/watch?v=Z9cB0TjfIkM">honest trailer</a> of <em>The Room</em> a.k.a. one of the worst movies of all time (written, produced, directed by and starring Tommy Wiseau).</p>
+While sitting in the office, my colleague <a href="https://www.wiso.uni-hamburg.de/fachbereich-sowi/professuren/schnapp/team/dietrich-brian.html">Brian</a> and I stumbled upon this dead-on <a href="https://www.youtube.com/watch?v=Z9cB0TjfIkM">honest trailer</a> of <em>The Room</em> a.k.a. one of the worst movies of all time (written, produced, directed by and starring Tommy Wiseau).
   
 And since the movie features such Shakespearian quotes as *"I did not hit her, it's not true! It's bullshit! I did not hit her! I did naaht! Oh hi, Mark"*, we joked about mining the screenplay for other hidden gems.
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Mapping and analyzing road accidents in South Australia"
-excerpt_separator: "<!--more-->"
 date: "January 23, 2018"
 type: post
 published: true
@@ -16,7 +15,7 @@ tags:
 - crashes
 ---
 
-<p style="margin-top:60px">Since I may already have acquired a bit of a reputation for being preoccupied with <a href="https://correlaid.org/blog/posts/point-pattern-analysis">accident analyses</a>, I decided to give it another shot and map and analyze all (non-)fatal road accidents happening in South Australia in 2016.</p> 
+Since I may already have acquired a bit of a reputation for being preoccupied with <a href="https://correlaid.org/blog/posts/point-pattern-analysis">accident analyses</a>, I decided to give it another shot and map and analyze all (non-)fatal road accidents happening in South Australia in 2016.
 
 Data for this analysis is provided by the <a href="https://data.sa.gov.au/">South Australian Government Data Directory</a>. 
 
