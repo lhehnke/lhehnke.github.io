@@ -1,39 +1,40 @@
 <div class="share-page">
+  
+      <div class="share-buttons">
 
 <!-- <section id="social-share-section"> -->
   
-      <p class="text muted sr-only" style="font-family:'Montserrat', Helvetica, sans-serif;text-transform:uppercase; font-weight:normal; font-size=14px">Share on</p>
-  
-<!-- <span class="sr-only">Share: </span> -->
+<span class="sr-only">Share: </span> 
 
-  <!--- Share on Twitter -->
-    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
-    class="btn btn-social-icon btn-twitter" title="Share on Twitter">
-      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
-      <span class="sr-only">Twitter</span>
-      </a>
-
-    <!--- Share on Facebook -->
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
-    class="btn btn-social-icon btn-facebook" title="Share on Facebook">
-      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+        <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Facebook" >
+                <span class="fa fa-fw fa-facebook-offical share-button" aria-hidden="true"></span>
       <span class="sr-only">Facebook</span>
-      </a>
+        </a>
 
-    <!--- Share on Google Plus -->
-      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
-    class="btn btn-social-icon btn-google" title="Share on Google+">
-      <span class="fa fa-fw fa-google-plus" aria-hidden="true"></span>
+        <a  href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Twitter" >
+                <span class="fa fa-fw fa-twitter share-button" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+        </a>
+
+        <a  href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Google+" >
+                <span class="fa fa-fw fa-google-plus share-button" aria-hidden="true"></span>
       <span class="sr-only">Google+</span>
-      </a>
+        </a>
 
-
-    <!--- Share on LinkedIn -->
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
-    class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
-      <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
+        <a  href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on LinkedIn" >
+                <span class="fa fa-fw fa-linkedin share-button" aria-hidden="true"></span>
       <span class="sr-only">LinkedIn</span>
-      </a>
+        </a>
+
+
     
  </div>
 
@@ -65,5 +66,49 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 } 
+
+/* All buttons */
+.share-buttons {
+}
+
+/* Each button */
+
+.share-button:hover {
+    opacity: 1;
+    color: #ffffff;
+}
+
+/* Facebook button */
+.fa-facebook-official {
+    color: #3b5998;
+}
+.fa-facebook-official:hover {
+    background-color: #3b5998;
+}
+
+/* Twitter button */
+.fa-twitter {
+    color: #55acee;
+}
+.fa-twitter:hover {
+    background-color: #55acee;
+}
+
+/* Google-PLus button */
+.fa-google-plus {
+    color: #dd4b39;
+}
+.fa-google-plus:hover {
+    background-color: #dd4b39;
+}
+
+
+/* LinkedIn button */
+.fa-linkedin {
+    color: #007bb5;
+}
+.fa-linkedin:hover {
+    background-color: #007bb5;
+}
 
 </style>
