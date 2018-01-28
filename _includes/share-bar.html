@@ -12,7 +12,7 @@
         <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Facebook" >
-            <span class="fa fa-facebook-official share-button"> Facebook</span>
+            <i class="fa fa-facebook-official share-button"> Facebook</i>
         </a>
 
         <a  href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
@@ -46,6 +46,7 @@
 /* Share Bar */
 #share-bar {
     font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Title */
@@ -65,9 +66,6 @@
     margin-right: 3px;
     border: 1px solid #D3D6D2;
     padding: 5px 10px 5px 10px;
-    font-family: 'Roboto', sans-serif; /* added */
-
-
 }
 .share-button:hover {
     opacity: 1;
