@@ -127,7 +127,7 @@ flights_points <- flights_fortified %>%
 
 ## Processing NASA's night lights image
 
-As mentioned at the beginning, all maps in this blog post use NASA's so-called *night lights* images, i.e., satellite images of the Earth at night, as raster objects (image credit: <a href="https://earthobservatory.nasa.gov/">NASA Earth Observatory</a>). 
+As mentioned at the beginning, all maps in this blog post use NASA's so-called *night lights* images -- satellite images of the Earth at night -- as raster objects (image credit: <a href="https://earthobservatory.nasa.gov/">NASA Earth Observatory</a>). 
 
 You can import `.jpg` files to `R` with the `readJPEG()`function from the `jpeg` package and render them with `rasterGrob()` from the `grid` graphics package. Alternatively, you can use `GeoTIFF` files for a higher resolution and, if available, additional geospatial metadata.  
 
