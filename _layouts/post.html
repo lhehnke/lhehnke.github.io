@@ -11,15 +11,12 @@ notes: active
 				{{ page.date | date_to_string }} {% if page.author %} by {{ page.author }} {% endif %}
 			</info></h2>
 			
+										{% include share-page.html %}
+
 			<!-- Post content -->
 			<div class="notebody">
 				{{ content }}
 				
-							{% include share-page.html %}
-			   <!--    {% if page.social-share %} -->
-        {% include social-share.html %}
-        
-<!--  {% endif %} -->
 
 			</div>
 			

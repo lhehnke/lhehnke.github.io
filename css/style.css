@@ -130,8 +130,8 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
     
     a { font-weight: 700; color: #fff; margin-left: 10px; &:hover { border-bottom: 1px dashed #fff; } } }
 
-/* --- Social media sharing section --- */
 
+/* --- Social media sharing section --- */
 #social-share-section {
   margin-bottom: 30px;
 }
