@@ -13,33 +13,33 @@
               <a  href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Twitter" >
-            <i class="fa fa-twitter share-button"> Twitter</i>
+            <span class="fa fa-twitter share-button"> Twitter</span>
         </a>
 
       
         <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Facebook" >
-            <i class="fa fa-facebook-official share-button"> Facebook</i>
+            <span class="fa fa-facebook-official share-button"> Facebook</span>
         </a>
 
 
         <a  href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Google+" >
-            <i class="fa fa-google-plus share-button"> Google+</i>
+            <span class="fa fa-google-plus share-button"> Google+</span>
         </a>
 
 
         <a  href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on LinkedIn" >
-            <i class="fa fa-linkedin share-button"> LinkedIn</i>
+            <span class="fa fa-linkedin share-button"> LinkedIn</span>
         </a>
 
         <a  href="mailto:?subject={{ page.title }}&amp;body=Check out this site {{ site.url }}{{ site.baseurl }}{{ page.url }}"
             title="Share via Email" >
-            <i class="fa fa-envelope share-button"> Email</i>
+            <span class="fa fa-envelope share-button"> Email</span>
         </a>
     </div>
 
@@ -49,7 +49,6 @@
 /* Share Bar */
 #share-bar {
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
 }
 
 /* Title */
@@ -69,6 +68,8 @@
     margin-right: 3px;
     border: 1px solid #D3D6D2;
     padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
 }
 .share-button:hover {
     opacity: 1;
