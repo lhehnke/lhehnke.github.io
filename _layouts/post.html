@@ -15,8 +15,6 @@ notes: active
 			<!-- Post content -->
 			<div class="notebody">
 				{{ content }}
- {% include share-bar.html %}
- {% include share-page.html %}
 			</div>
 			
 			<!-- Post info -->
@@ -24,6 +22,11 @@ notes: active
 			<!-- include some categories and tags maybe? -->
 			</div>
 			
+						<!-- Post comments -->
+			<div class="notecomments">
+				 {% include share-bar.html %}
+ {% include share-page.html %} 
+</div>
 			
 </div>
 </div><!-- /.notes -->
