@@ -18,7 +18,7 @@ tags:
 - maps
 ---
 
-Admittedly, mapping airline routes using flight data is neither a bold move nor that innovative. <a href="http://flowingdata.com/2011/05/05/where-do-major-airlines-fly-in-the-united-states/">FlowingData</a> did it, <a href="https://www.r-bloggers.com/create-air-travel-route-maps-in-ggplot-a-visual-travel-diary/">R-Bloggers</a> did it, <a href="http://spatial.ly/2012/06/mapping-worlds-biggest-airlines/">Spatial.ly</a> did it (and even <a href="http://spatial.ly/2013/05/great-world-flight-paths-map/">wrote about</a> someone who did it). 
+Admittedly, mapping airline routes using flight data is neither a bold move nor that innovative. <a href="http://flowingdata.com/2011/05/05/where-do-major-airlines-fly-in-the-united-states/">FlowingData</a> did it, <a href="https://www.r-bloggers.com/create-air-travel-route-maps-in-ggplot-a-visual-travel-diary/">R-Bloggers</a> did it, <a href="http://spatial.ly/2012/06/mapping-worlds-biggest-airlines/">Spatial.ly</a> did it (and even <a href="http://spatial.ly/2013/05/great-world-flight-paths-map/">wrote about</a> someone else who did it). 
 
 Yet, as an aviation enthusiast, I couldn't resist laying my hands on this kind of data, especially after stumbling across <a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's</a> call for more visualizations featuring some sort of lighting effect. While Weimin used urban data to achieve this effect, I will draw on night lights images provided by the <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA Earth Observatory</a>.
 
