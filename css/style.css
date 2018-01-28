@@ -121,7 +121,7 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 	
 	
 .share-page {
-    text-align: center;
+    text-align: right;
     background: $secondary-color;
     color: $light-color;
     padding: 8px 15px;

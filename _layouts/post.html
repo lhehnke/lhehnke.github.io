@@ -4,6 +4,12 @@ notes: active
 ---
 
 <div class="notes">
+  
+  									<!-- Post comments -->
+			<div class="notecomments">
+ {% include share-page.html %} 
+</div>
+  
 		<div class="note single">
 			<h1 class="title">{{ page.title }}</h1>
 			
@@ -11,10 +17,6 @@ notes: active
 				{{ page.date | date_to_string }} {% if page.author %} by {{ page.author }} {% endif %}
 			</info></h2>
 			
-									<!-- Post comments -->
-			<div class="notecomments">
- {% include share-page.html %} 
-</div>
 									
 			<!-- Post content -->
 			<div class="notebody">
