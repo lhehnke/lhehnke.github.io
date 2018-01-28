@@ -243,10 +243,10 @@ ggplot() +
            label = paste("lhehnke.github.io || NASA.gov || OpenFlights.org"), color = "white", alpha = 0.5) +
   coord_equal() 
   
-ggsave("British_Airways.png", width = 36, height = 18, units = "in", dpi = 100)
+ggsave("BritishAirways.png", width = 36, height = 18, units = "in", dpi = 100)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/British_Airways_new.png" width="655px" height="327px" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/BritishAirways_new.png" width="655px" height="327px" vspace="40px"/></p>
 
 ## Mapping multiple airlines' flight routes
 
