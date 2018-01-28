@@ -3,7 +3,7 @@ layout: post
 title: "Flights at Night: Mapping airline routes on NASA's night lights images"
 date: "January 27, 2018"
 type: post
-published: false
+published: true
 status: publish
 categories:
 - maps
@@ -18,7 +18,7 @@ tags:
 - maps
 ---
 
-Admittedly, mapping airline routes using flight data is neither a bold move nor that innovative. <a href="http://flowingdata.com/2011/05/05/where-do-major-airlines-fly-in-the-united-states/">FlowingData</a> did it, <a href="https://www.r-bloggers.com/how-to-draw-connecting-routes-on-map-with-r-and-great-circles/">R-Bloggers</a> did it, <a href="http://spatial.ly/2012/06/mapping-worlds-biggest-airlines/">Spatial.ly</a> did it (and even <a href="http://spatial.ly/2013/05/great-world-flight-paths-map/">wrote about</a> someone who did it). 
+Admittedly, mapping airline routes using flight data is neither a bold move nor that innovative. <a href="http://flowingdata.com/2011/05/05/where-do-major-airlines-fly-in-the-united-states/">FlowingData</a> did it, <a href="https://www.r-bloggers.com/create-air-travel-route-maps-in-ggplot-a-visual-travel-diary/">R-Bloggers</a> did it, <a href="http://spatial.ly/2012/06/mapping-worlds-biggest-airlines/">Spatial.ly</a> did it (and even <a href="http://spatial.ly/2013/05/great-world-flight-paths-map/">wrote about</a> someone who did it). 
 
 Yet, as an aviation enthusiast, I couldn't resist laying my hands on this kind of data, especially after stumbling across <a href="https://weiminwang.blog/2015/06/24/use-r-to-plot-flight-routes-on-a-fancy-world-background/">Weimin Wang's</a> call for more visualizations featuring some sort of lighting effect. While Weimin used urban data to achieve this effect, I will draw on night lights images provided by the <a href="https://earthobservatory.nasa.gov/Features/NightLights/page3.php">NASA Earth Observatory</a>.
 
@@ -127,7 +127,7 @@ flights_points <- flights_fortified %>%
 
 ## Processing NASA's night lights image
 
-As mentioned at the beginning, all maps in this blog post use NASA's so-called *night lights* images, i.e., satellite images of the Earth at night, as raster objects (image credit: <a href="https://earthobservatory.nasa.gov/">NASA Earth Observatory</a). 
+As mentioned at the beginning, all maps in this blog post use NASA's so-called *night lights* images, i.e., satellite images of the Earth at night, as raster objects (image credit: <a href="https://earthobservatory.nasa.gov/">NASA Earth Observatory</a>). 
 
 You can import `.jpg` files to `R` with the `readJPEG()`function from the `jpeg` package and render them with `rasterGrob()` from the `grid` graphics package. Alternatively, you can use `GeoTIFF` files for a higher resolution and, if available, additional geospatial metadata.  
 
@@ -143,7 +143,7 @@ earth <- rasterGrob(earth, interpolate = TRUE)
 
 ## Mapping airline routes on night lights
 
-While editing the code for the final maps, I wanted to step up my `#dataviz` game and try to mimic the airlines' logos by customizing both text colors and fonts. The airlines below were chosen for no particular reason other than being my favourite airline (Lufthansa) or having nicely constructed flight routes and visually appealing corporate colors that make for some great lighting effects (Emirates; British Airways). 
+While editing the code for the final maps, I wanted to step up my *#dataviz* game and try to mimic the airlines' logos by customizing both text colors and fonts. The airlines below were chosen for no particular reason other than being my favourite airline (Lufthansa) or having nicely constructed flight routes and visually appealing corporate colors that make for some great lighting effects (Emirates; British Airways). 
 
 After conducting a quick Google search, I decided on the following parameters, which come quite close to the original logos:
 * Lufthansa: `Helvetica black`; `#f9ba00`
@@ -296,4 +296,4 @@ This last chunk of code will finally get you the map shown right at the beginnin
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="40px"/></p>
 
-And to end this post in the style of a famous American travel author and TV host: *"Keep on mappin'! Ciao."* 
+And to end this post in the style of a famous American TV host and travel author: *"Keep on mappin'! Ciao."* 
