@@ -1,40 +1,41 @@
 <div class="share-page">
-  
-      <div class="share-buttons">
 
 <!-- <section id="social-share-section"> -->
   
 <span class="sr-only">Share: </span> 
 
-        <a  href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
-            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-            title="Share on Facebook" >
-                <span class="fa fa-fw fa-facebook-offical" aria-hidden="true"></span>
-      <span class="sr-only">Facebook</span>
-        </a>
-
-        <a  href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
-            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-            title="Share on Twitter" >
-                <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
+    onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Twitter" >
+            <span class="fa fa-twitter" aria-hidden="true"></span>
       <span class="sr-only">Twitter</span>
-        </a>
+      </a>
 
-        <a  href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
-            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-            title="Share on Google+" >
-                <span class="fa fa-fw fa-google-plus" aria-hidden="true"></span>
+    <!--- Share on Facebook -->
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Facebook" >
+            <span class="fa fa-facebook-official" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+      </a>
+      
+    <!--- Share on Google Plus -->
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
+      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on Google+" >
+            <span class="fa fa-google-plus" aria-hidden="true"></span>
       <span class="sr-only">Google+</span>
-        </a>
+      </a>
 
-        <a  href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
-            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-            title="Share on LinkedIn" >
-                <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
+
+    <!--- Share on LinkedIn -->
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
+      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+                title="Share on LinkedIn" >
+            <span class="fa fa-linkedin" aria-hidden="true"></span>
       <span class="sr-only">LinkedIn</span>
-        </a>
-
-
+      </a>
     
  </div>
 
