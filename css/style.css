@@ -119,7 +119,7 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 	margin: 5px 15px 0px 0px;
 	font-family: 'Montserrat', Helvetica, sans-serif; }
 	
-
+	
 .share-page {
     text-align: center;
     background: $secondary-color;
@@ -128,6 +128,7 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
     border-radius: 5px;
     margin: 1.5 * $spacing-unit 0;
     
-    a { font-weight: 700; color: #fff; margin-left: 10px; &:hover { border-bottom: 1px dashed #fff; } } }
+    a { font-weight: 700; color: #fff; margin-left: 10px;  } }
 
 
+/* &:hover { border-bottom: 1px dashed #fff; } */
