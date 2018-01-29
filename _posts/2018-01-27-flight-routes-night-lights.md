@@ -24,7 +24,7 @@ Yet, as an aviation enthusiast I couldn't resist laying my hands on this kind of
 
 Despite me being the *n*th person working with flight data, most of the previous approaches don't seem to start from scratch, i.e., by downloading raw data straigth from the internet and processing it prior to mapping. Hence, the code below covers both these initial steps and demonstrates how to create nice looking maps like this one
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="30px"/></p>
 
 using <a href="https://openflights.org/data.html">OpenFlights data</a> in combination with NASA images. 
 
@@ -188,7 +188,7 @@ ggsave("Lufthansa.png", width = 36, height = 18, units = "in", dpi = 100)
 
 which results in this beautiful map:
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Lufthansa.png" width="655px" height="327px" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Lufthansa.png" width="655px" height="327px" vspace="30px"/></p>
 
 The next two maps can be created in almost the same manner by simply changing the name of the airline in `flights_fortified[flights_fortified$name == "AIRLINE NAME", ]` and `flights_points[flights_points$name == "AIRLINE NAME", ]` when subsetting the data to whichever airline's routes you'd like to plot. 
 
@@ -218,7 +218,7 @@ ggplot() +
 ggsave("Emirates.png", width = 36, height = 18, units = "in", dpi = 100)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Emirates.png" width="655px" height="327px" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Emirates.png" width="655px" height="327px" vspace="30px"/></p>
 
 ### 3. British Airways
 
@@ -246,7 +246,7 @@ ggplot() +
 ggsave("BritishAirways.png", width = 36, height = 18, units = "in", dpi = 100)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/BritishAirways.png" width="655px" height="327px" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/BritishAirways.png" width="655px" height="327px" vspace="30px"/></p>
 
 ## Mapping multiple airlines' flight routes
 
@@ -294,7 +294,7 @@ ggsave("Airlines.png", width = 36, height = 18, units = "in", dpi = 100)
 
 This last chunk of code will finally get you the map shown right at the beginning: 
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/openflights-nasa/Airlines_final.png" width="655px" height="327px" vspace="30px"/></p>
 
 And to end this post in the style of a famous American TV host and travel author: 
 
