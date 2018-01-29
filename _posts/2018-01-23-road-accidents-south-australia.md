@@ -26,7 +26,7 @@ Data for this analysis is provided by the <a href="https://data.sa.gov.au/">Sout
 Running the code below requires the packages `ggmap`, `ggplot2`, `ggthemes`, `magrittr`, `maps`, `mapdata`, 
 `maptools`, `proj4`, `raster`, `rgdal`, `sp`, `stringr`, and `tidyverse`.
 
-For loading multiple packages at once, I conventionally use `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
+For loading multiple packages at once, I conventionally use `p_load()` from the `pacman` package which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
 
 ``` r
 # Install and load pacman if not already installed
