@@ -30,7 +30,7 @@ Well, no sooner said than done.
 Conducting the analysis below requires the packages `dplyr`, `ggplot2`, `magrittr`, `pdftools`, `reshape2`, `stringr`, 
 `tidytext`, and `wordcloud`.
 
-For loading multiple packages at once, I recommend `p_load()` from the `pacman` package, which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
+For loading multiple packages at once I recommend `p_load()` from the `pacman` package which is a wrapper function for `library()` and `require()` and installs missing packages if necessary.
 
 ``` r
 # Install and load pacman if not already installed
@@ -58,13 +58,13 @@ and extract the text via `pdf_text()` from the package `pdftools`.
 
 ## Text cleaning
 
-After extracting the raw text from The Room's `pdf` screenplay, it needs some cleaning prior to analyzing. 
+After extracting the raw text from The Room's `pdf` screenplay it needs some cleaning prior to analyzing. 
 
 Concretely, this means separating the lines of the raw text (`\n` indicating line breaks), removing redundant text parts such as the cover page, headers and footers, blank lines, and directing instructions as well as punctuation (except for apostrophes), non-alphabetic characters, and stopwords. (Note that I deliberately didn't stem words.)
 
-For most of these steps, `lapply()` can be used to apply the respective function to each element of the list. 
+For most of these steps `lapply()` can be used to apply the respective functions to each element of the list. 
 
-While performing these steps, the cleaned text, consisting of a sequence of strings, is splitted into single words -- a process called *tokenization*.
+While performing these steps, the cleaned text, which consists of a sequence of strings, is splitted into single words -- a process called *tokenization*.
 
 ```r
 # Separate lines with \n indicating line breaks
@@ -115,7 +115,7 @@ room_df %<>% anti_join(stop_words)
 
 ## Visualizing word frequencies
 
-After processing the raw text and turning it into a tidy format, we can extract the most common words from the movie script by counting their appearances within the script via `count()` from the `plyr` package and plot them by running the following code
+After processing the raw text and turning it into a tidy format we can extract the most common words from the movie script by counting their appearances via `count()` from the `plyr` package and plot them by running the following code
 
 ```r
 # Find most common words
