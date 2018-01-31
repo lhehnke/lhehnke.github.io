@@ -141,28 +141,23 @@ It comes as little surprise that the most common words in the movie script are o
 
 ## Sentiment analysis
 
-In a similar manner, we can conduct a basic sentiment analysis and visualize the results. For this purpose we will use the `get_sentiments()` functions from the `tidytext` package and use both the `NRC` Emotion Lexicon from Saif Mohammad and Peter Turney (all sentiments) and the sentiment lexicon from `Bing` Liu and collaborators (positive/negative sentiments).
+In a similar manner, we can conduct a basic sentiment analysis and visualize the results. For this purpose we will use the `get_sentiments()` function from the `tidytext` package and use both the `NRC` Emotion Lexicon from Saif Mohammad and Peter Turney (all sentiments) and the sentiment lexicon from `Bing` Liu and collaborators (positive/negative sentiments).
 
 ```r
-# Get sentiments (nrc) and join
-nrc <- get_sentiments("nrc") 
-room_nrc <- room_df %>%
-  inner_join(nrc) %>%
-  count(word, sort = TRUE)
-
-# Calculate total sentiment scores
-nrc_counts <- data.frame(table(nrc$sentiment))
-
-# Plot sentiment scores
-ggplot(data = nrc_counts, aes(x = Var1, y = Freq)) +
-  geom_bar(aes(fill = Var1), stat = "identity") +
+# Plot total sentiment scores (nrc)
+room_df %>%
+  inner_join(get_sentiments("nrc")) %>%
+  count(word, sentiment) %>%
+  ggplot(aes(sentiment, n)) +
+  geom_bar(aes(fill = sentiment), stat = "identity") +
+  theme(text = element_text(size = 30), axis.text.x = element_text(angle = 65, vjust = 0.5)) +
   xlab("") + ylab("") + ggtitle("Total sentiment scores in The Room", subtitle = "Written by Tommy Wiseau") +
-  ylim(0, 4000) + theme(legend.position = "none") 
+  ylim(0, 500) + theme(legend.position = "none") 
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot2.png" width="550px" height="500px" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/text-mining-room/plot2_new.png" width="550px" height="500px" vspace="50px"/></p>
 
-We can see in the `NRC` sentiments plot that most words in The Room's screenplay are negatively scored, followed by positively scored words.
+We can see in the `NRC` sentiments plot that most words in The Room's screenplay are positively scored, followed by negatively scored words.
 
 ## Positive and negative words
 
