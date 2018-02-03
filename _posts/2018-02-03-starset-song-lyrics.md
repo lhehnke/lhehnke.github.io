@@ -279,9 +279,6 @@ In order to create the starplots, I plotted bigram networks for each album on an
 
 When running the code below you should get these customized bigram networks (although you might have to play around a bit with the positioning aesthetics of the annotation layers as the nodes' coordinates themselves aren't fixed):
 
-<details>
-  <summary>Click here for the code.</summary>
-  <p>
 ```r
 # Split bigrams by album and remove album column
 starset_bigrams_tm <- starset_bigram_counts %>%
@@ -391,7 +388,6 @@ p +
 
 ggsave("Starplot_Vessels.png", width = 10, height = 10, units = "in", dpi = 100)
 ```
-</p></details>
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/Starplot_Transmissions.png" width="564px" height="599px" vspace="40px"/></p>
 
