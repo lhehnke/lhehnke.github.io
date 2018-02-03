@@ -216,7 +216,7 @@ On the debut album *Transmissions*, the words *dark*, *fall*, and *lost* (negati
 
 ## Calculating and visualizing n-grams
 
-Up to this point, the analysis was based on words as individual units. When interested in co-occurring words or word sequences, you can further analyze the relationship between two (or more) words by tokenizing the song texts by pairs of adjacent words -- so-called bigrams. See <a href="https://www.tidytextmining.com/ngrams.html">here</a>. 
+Up to this point, the analysis was based on words as individual units. When interested in co-occurring words or word sequences, you can further analyze the relationship between two (or more) words by tokenizing the song texts by pairs of adjacent words -- so-called bigrams. See <a href="https://www.tidytextmining.com/ngrams.html">here</a> for more detailed information on this topic. 
 
 The next chunk of code extracts, counts, and visualizes these bigrams.
 
