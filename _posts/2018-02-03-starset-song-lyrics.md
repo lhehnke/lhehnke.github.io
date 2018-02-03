@@ -18,7 +18,7 @@ tags:
 
 While browsing the datanet earlier this week, inspiration hit me when I stumbled across John MacKintosh's awesome <a href="https://www.johnmackintosh.com/2018-01-30-hardwired-for-tidy-text/?utm_content=buffereffed&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">text analysis of Metallica lyrics</a> using the equally awesome <a href="https://github.com/josiahparry/geniusR">geniusR</a> package by <a href="http://josiahparry.com/">Josiah Parry</a>. 
 
-In an instant I decided to do my own song lyrics analysis featuring one of my favourite bands: <a href="http://www.starsetonline.com/">STARSET</a>, an American cinematic rock band formed by scientist turned lead singer Dustin Bates in 2013.
+In an instant, I decided to do my own song lyrics analysis featuring one of my favourite bands: <a href="http://www.starsetonline.com/">STARSET</a>, an American cinematic rock band formed by scientist turned lead singer Dustin Bates in 2013.
 
 Since the band's concept revolves around space, I thought it was a good fit to incorporate an element inspired by Nicholas Rougeux's <a href="https://www.c82.net/work/?id=357">literary constellations</a> into the analysis by creating *starplot* graphs which depict pairs of adjacent words on an image of the Milky Way:
 
