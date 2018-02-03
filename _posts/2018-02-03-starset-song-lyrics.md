@@ -22,7 +22,7 @@ In an instant I decided to do my own song lyrics analysis featuring one of my fa
 
 Since the band's concept revolves around space, I thought it was a good fit to incorporate an element inspired by Nicholas Rougeux's <a href="https://www.c82.net/work/?id=357">literary constellations</a> into the analysis by creating *starplot* graphs which depict pairs of adjacent words on an image of the Milky Way:
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/Starplot_Transmissions.png" width="564px" height="599px" vspace="40px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/Starplot_Vessels.png" width="564px" height="599px" vspace="40px"/></p>
 
 
 ## Setup
