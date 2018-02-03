@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mining and visualizing STARSET song lyrics"
+title: "Into the Unknown: Mining and visualizing STARSET song lyrics"
 date: "February 03, 2018"
 type: post
 published: false
@@ -103,7 +103,7 @@ starset_cols <- c("#363241", "#3b2d2d", "#483845", "#4d3b4b", "#332f3e", "#2a2a2
 
 ## Visualizing word frequencies
 
-The first step of the analysis consisted of calculating word frequencies and extracting the most common words on both albums.
+The first step of the song text analysis consisted of calculating word frequencies and extracting the most common words on both albums.
 
 ```r
 # Plot most common words
