@@ -212,7 +212,7 @@ ggsave("plot4.png", width = 12, height = 8, units = "in", dpi = 100)
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/plot4.png" width="600px" height="400px" vspace="50px"/></p>
 
-Not only are the sentiments on both albums strikingly similar, but the most common words are as well. 
+Not only are the sentiments on both albums strikingly similar but the most common words are as well. 
 
 On the debut album *Transmissions*, the words *dark*, *fall*, and *lost* (negatively scored) and *free*, *love*, and *overtake* (positively scored) occur most often, while the words *falling*, *fall*, and *lost* (negatively scored) and *shine*, *beauty/love*, and *free* are the most common words on the second album *Vessels*.
 
