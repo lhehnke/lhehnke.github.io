@@ -52,7 +52,7 @@ p_load(ggraph, ggrepel, ggthemes, grid, igraph, jpeg, magrittr, reshape2, tidyr,
 
 `geniusR` provides an easy way to access lyrics as text data using the website <a href="https://genius.com/">Genius</a>. To download the song lyrics for each track of a specified album you can use the `genius_album()` function which returns a tibble with `track number`, `title`, and `lyrics` in a tidy format. 
 
-I did this for both STARSET's debut album *Transmissions* and its successor, *Vessels*. 
+I did this for both STARSET's debut album <a href="https://www.youtube.com/watch?v=jE4przMkUqo"><em>Transmissions</em></a> and its successor, <a href="https://www.youtube.com/watch?v=XOxQaKAO6rU"><em>Vessels</em></a>. 
 
 ```r
 # Download Transmissions album lyrics
