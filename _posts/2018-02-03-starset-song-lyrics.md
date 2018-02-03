@@ -158,7 +158,7 @@ ggsave("plot2.png", width = 12, height = 8, units = "in", dpi = 100)
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/plot2.png" width="600px" height="400px" vspace="50px"/></p>
 
-According to the `NRC` sentiment analysis, the emotions on both *Transmissions* and *Vessels* are -- somewhat unsurprisingly for a rock band -- rather negative, accompanied by mainly sadness and fear (although there's a hint of positivity on *Vessels*). 
+According to the `NRC` sentiment analysis, the emotions on both *Transmissions* and *Vessels* are -- somewhat unsurprisingly for a rock band -- rather negative, accompanied by mainly sadness and fear (although there's a stronger hint of positivity on *Vessels*). 
 
 ### Getting sentiments using the Bing lexicon
 
