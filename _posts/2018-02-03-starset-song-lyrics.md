@@ -16,11 +16,11 @@ tags:
 - starset
 ---
 
-While browsing the datanet earlier this week, inspiration hit me when I stumbled across <a href="https://www.johnmackintosh.com/2018-01-30-hardwired-for-tidy-text/?utm_content=buffereffed&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">John MacKintosh's awesome text analysis of Metallica lyrics</a> using the equally awesome <a href="https://github.com/josiahparry/geniusR">geniusR</a> package by <a href=http://josiahparry.com/"> Josiah Parry</a>. 
+While browsing the datanet earlier this week, inspiration hit me when I stumbled across John MacKintosh's awesome <a href="https://www.johnmackintosh.com/2018-01-30-hardwired-for-tidy-text/?utm_content=buffereffed&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">text analysis of Metallica lyrics</a> using the equally awesome <a href="https://github.com/josiahparry/geniusR">geniusR</a> package by <a href="http://josiahparry.com/">Josiah Parry</a>. 
 
-In an instant I decided to do my own song lyrics analysis featuring one of my favourite bands (honorable mention to the Foo Fighters): <a href="http://www.starsetonline.com/">STARSET</a>, an American cinematic rock band which was formed by scientist turned lead singer Dustin Bates in 2013.
+In an instant I decided to do my own song lyrics analysis featuring one of my favourite bands: <a href="http://www.starsetonline.com/">STARSET</a>, an American cinematic rock band which was formed by scientist turned lead singer Dustin Bates in 2013.
 
-Since STARSET is a space-themed band, I thought it was a good fit to incorporate an element inspired by Nicholas Rougeux's <a href="https://www.c82.net/work/?id=357">literary Constellations</a> into this analysis by creating *starplot* graphs which depict pairs of adjacent words plotted on an image of the Milky Way:
+Since the band's concept revolves around space, I thought it was a good fit to incorporate an element inspired by Nicholas Rougeux's <a href="https://www.c82.net/work/?id=357">literary constellations</a> into the analysis by creating *starplot* graphs which depict pairs of adjacent words on an image of the Milky Way:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/Starplot_Transmissions.png" width="564px" height="599px" vspace="40px"/></p>
 
@@ -48,9 +48,7 @@ p_load(ggraph, ggrepel, ggthemes, grid, igraph, jpeg, magrittr, reshape2, tidyr,
 
 ## Downloading album lyrics
 
-`geniusR` provides an easy method to access lyrics as text data using the website <a href="https://genius.com/">Genius</a>. To download the song lyrics for each track of a specified album at once you can use the `genius_album()` function, returning a tibble with `track number`, `title`, and `lyrics` in a tidy format. 
-
-I did this for both STARSET albums; their debut album *Transmissions* and and its successor, *Vessels*. 
+`geniusR` provides an easy way to access lyrics as text data using the website <a href="https://genius.com/">Genius</a>. To download the song lyrics for each track of a specified album you can use the `genius_album()` function, returning a tibble with `track number`, `title`, and `lyrics` in a tidy format. I did this for both STARSET's debut album *Transmissions* and its successor, *Vessels*. 
 
 ```r
 # Download Transmissions album lyrics
@@ -67,9 +65,9 @@ starset <- rbind(transmissions, vessels)
 
 ## Cleaning the text and setting the theme
 
-Some minor data cleaning needed to be done first before starting with the actual analysis. Note that I didn't stem the words as it messed up some of the words' meanings so I cut this part out while revising the final code. 
+Some minor data cleaning needed to be done first before starting with the actual analysis. Note that I didn't stem the words as stemming occasionally messed up the words' meanings so I cut this part out while revising the final code. 
 
-Additionally, I set up a customized `ggplot2` theme and a color palette containing most colors from the *Vessels* album cover for the graphs.
+Additionally, I set up a customized `ggplot2` theme for the graphs and a color palette containing most colors from the *Vessels* album cover.
 
 ```r
 # Remove punctuation (except for apostrophes) and numbers
@@ -103,7 +101,7 @@ starset_cols <- c("#363241", "#3b2d2d", "#483845", "#4d3b4b", "#332f3e", "#2a2a2
 
 ## Visualizing word frequencies
 
-The first step of the analysis was to calculate word frequencies and extract the most common words on both albums.
+The first step of the analysis consisted of calculating word frequencies and extracting the most common words on both albums.
 
 ```r
 # Plot most common words
@@ -134,7 +132,7 @@ As you can see in the above plot, *light* (20x), *dark* (14x), and the trio *fal
 
 ## Sentiment analyses
 
-In the next step of the analysis I followed the proceedings from when I mined the screenplay of <a href="https://lhehnke.github.io/notes/2018/01/25/text_mining_the_room">The Room</a> in a previous post and evaluated the emotions in STARSET's song lyrics using the `NRC` sentiment lexicon which categorizes words into positive and negative categories as well as in anger, anticipation, disgust, fear, joy, sadness, surprise, and trust.
+In the next step of the analysis I followed the proceedings from when I mined the screenplay of <a href="https://lhehnke.github.io/notes/2018/01/25/text_mining_the_room">The Room</a> in a previous post and evaluated the emotions in STARSET's song lyrics using the `NRC` sentiment lexicon. `NRC` categorizes words into positive and negative categories as well as in anger, anticipation, disgust, fear, joy, sadness, surprise, and trust.
 
 ### Getting sentiments using the NRC lexicon
 ```r
@@ -156,11 +154,11 @@ ggsave("plot2.png", width = 12, height = 8, units = "in", dpi = 100)
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/plot2.png" width="600px" height="400px" vspace="50px"/></p>
 
-According to the sentiment analysis, the emotions on both albums are (somewhat unsurprisingly for a rock band) rather negative, accompanied by sadness and fear.
+According to the `NRC` sentiment analysis, the emotions on both *Transmissions* and *Vessels* are (somewhat unsurprisingly for a rock band) rather negative, accompanied by sadness and fear.
 
 ### Getting sentiments using the Bing lexicon
 
-After obtaining the results of the `NRC` sentiment analysis, I digged deeper into STARSET's alleged negativity (just kidding) by conducting another brief sentiment analysis using the `bing` lexicon to extract the most common positive and negative words on both albums.
+After obtaining the results of the `NRC` sentiment analysis, I decided to dig deeper into STARSET's alleged negativity (disclaimer: they're still a great band) by conducting another brief sentiment analysis using the `Bing` lexicon to extract the most common positive and negative words on both albums.
 
 ```r
 # Calculate Bing sentiment scores
@@ -216,11 +214,11 @@ Not only are the sentiments on both albums strikingly similar, but the most comm
 
 On the debut album *Transmissions*, the words *dark*, *fall*, and *lost* (negatively scored) and *free*, *love*, and *overtake* (positively scored) occur most often, while the words *falling*, *fall*, and *lost* (negatively scored) and *shine*, *beauty/love*, and *free* are the most common words on the second album *Vessels*.
 
-## Calculatng and visualizing bigrams
+## Calculating and visualizing n-grams
 
-Words as individual units up to this point, now relationship between two words (called bigrams) in album lyrics -> which words tend to co-occur or follows others immediately
+Up to this point, the analysis was based on words as individual units. When interested in co-occurring words or word sequences, you can further analyze the relationship between two (or more) words by tokenizing the song texts by pairs of adjacent words -- so-called bigrams. See <a href="https://www.tidytextmining.com/ngrams.html">here</a>. 
 
--> doing so by tokenizing by pairs of adjacent words rather than by individual ones. (see here ofr more information on tihs process: https://www.tidytextmining.com/ngrams.html)
+The next chunk of code extracts, counts, and visualizes these bigrams.
 
 ```r
 # Get bigrams with token = "ngrams" argument
@@ -266,18 +264,18 @@ ggsave("plot5.png", width = 12, height = 8, units = "in", dpi = 100)
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/plot5.png" width="600px" height="400px" vspace="50px"/></p>
 
-On *Transmissions*, the most common bigrams are *in the*, *I will* and *I am* (honorable mention to *okay okay* from one of my favourite STARSET songs *My Demons*). On *Vessels*, the most common bigrams are *in the*, *into the*, and *you're the*.
+On *Transmissions*, the most common bigrams are *in the*, *I will* and *I am* (honorable mention to *okay okay* from *My Demons*, one of my favourite STARSET songs). On *Vessels*, the most common bigrams are *in the*, *into the*, and *you're the*.
 
-As is obvious from this list, I did not remove any stop words since there wouldn't have been enough bigrams left for a sound analysis. However, I did include a snippet in the above code to filter stop words by splitting the bigrams into separate words, removing the stop words in each case, and merging them again. Just for the sake of completeness, the most common bigrams after removing the stop words were *wann break*, *fuel fanning*, and *break free* on *Transmissions* and *fallin falling*, *telepathic heart* and *silence screams* on *Vessels*.
+As is obvious from this list, I did not remove any stop words since there wouldn't have been enough bigrams left for a sound analysis. However, I did include a snippet in the above code to filter stop words by splitting the bigrams into separate words, removing the stop words in each case, and merging them again. And just for the sake of completeness, the most common bigrams after removing the stop words were *wanna break*, *fuel fanning*, and *break free* on *Transmissions* and *falling falling*, *telepathic heart* and *silence screams* on *Vessels*.
 
 
 ## Visualizing n-grams: Starplots
 
-As mentioned in the introductory oart of this post, I wanted to take up the idea from Nicholas Rougeux's literary constellations which resulted in my so-called *starplots* that are basically just simple space-themed bigram network graphs.
+As mentioned in the introductory part of this post, I wanted to take up the idea from Nicholas Rougeux's literary constellations which resulted in my so-called *starplots* (that are basically just simple space-themed bigram network graphs).
 
 In order to create the starplots, I plotted bigram networks for each album on an image of the Milky Way and drew three circles with different linetypes around the nodes, based on the nodes' respective coordinates.
 
-When running the code below you should get these customized bigram networks (although you might have to play around a bit with the positioning aesthetics of the annotation layers as the nodes' coordinates themselves aren't fixed):
+When running the code below you should get these customized bigram networks, although you might have to play around a bit with the positioning aesthetics of the annotation layers as the nodes' coordinates themselves aren't fixed:
 
 ```r
 # Split bigrams by album and remove album column
@@ -308,10 +306,8 @@ download.file("https://upload.wikimedia.org/wikipedia/commons/4/4d/Milky_Way_fro
 milky_way <- readJPEG("milky_way.jpg", native = TRUE)
 milky_way <- rasterGrob(milky_way, interpolate = TRUE)
 
-## Circle design inspired by https://www.c82.net/blog/?id=73 
-
 # Function to draw circles on plot
-## Adapted from https://stackoverflow.com/questions/6862742/draw-a-circle-with-ggplot2; Thanks to Z. Lin over at Stack Overflow for helping me extending it!
+## Adapted from https://stackoverflow.com/questions/6862742/draw-a-circle-with-ggplot2. Thanks to Z. Lin over at Stack Overflow for helping me extending it!
 
 gg_circle_from_position <- function(data, rsize = NA, 
                                     color = "black", fill = NA, 
@@ -330,7 +326,7 @@ gg_circle_from_position <- function(data, rsize = NA,
            color = color, fill = fill, lty = lty, size = size, ...)
 }
 
-## Transmissions 
+## Starplot: Transmissions 
 p <- ggraph(starset_bigram_tm_graph, layout = "fr") +
   annotation_custom(milky_way, xmin = -30, xmax = 30, ymin = -30, ymax = 30) +  
   geom_edge_link(aes(edge_alpha = n*2), colour = "#fafdff") +
@@ -359,7 +355,7 @@ p +
 
 ggsave("Starplot_Transmissions.png", width = 10, height = 10, units = "in", dpi = 100)
 
-## Vessels
+## Starplot: Vessels
 p <- ggraph(starset_bigram_vs_graph, layout = "fr") +
   annotation_custom(milky_way, xmin = -30, xmax = 30, ymin = -30, ymax = 30) +  
   geom_edge_link(aes(edge_alpha = n*2), colour = "#fafdff") +
