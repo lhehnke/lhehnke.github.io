@@ -20,7 +20,7 @@ While browsing the datanet earlier this week, inspiration hit me when I stumbled
 
 In an instant, I decided to do my own song lyrics analysis featuring one of my favourite bands: <a href="http://www.starsetonline.com/">STARSET</a>, an American cinematic rock band formed by scientist turned lead singer Dustin Bates in 2013.
 
-Since the band's concept revolves around space, I thought it was a good fit to incorporate an element inspired by Nicholas Rougeux's <a href="https://www.c82.net/work/?id=357">literary constellations</a> into the analysis by creating *starplot* graphs which depict pairs of adjacent words on an image of the Milky Way:
+Since the band's concept revolves around space, I thought it was a good fit to incorporate an element inspired by Nicholas Rougeux's <a href="https://www.c82.net/work/?id=357">literary constellations</a> into the analysis by creating *starplot* graphs, depicting pairs of adjacent words on an image of the Milky Way:
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/starset-lyrics/Starplot_Vessels.png" width="564px" height="599px" vspace="40px"/></p>
 
