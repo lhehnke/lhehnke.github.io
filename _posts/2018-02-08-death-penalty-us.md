@@ -113,7 +113,7 @@ death_penalty_df <- subset(death_penalty_df, !is.na(id))
 # Change class to numeric
 death_penalty_df[, c("day", "year")] <- lapply(death_penalty_df[, c("day", "year")], as.numeric)
 
-# Replace ? with Unknown
+# Replace ? with unknown
 death_penalty_df %<>%
   mutate_all(funs(gsub("\\?", "unknown", .))) %>%
   mutate_all(funs(gsub("^$", "unknown", .))) 
@@ -225,7 +225,7 @@ clean <- function(shape) {
 
 result_hex_df <- clean(result_hex)
 
-# Hexgon plot
+# Hexagon plot
 ggplot(result_hex_df) +
   geom_polygon(aes(x = long, y = lat, fill = n, group = group), color = "white") +
   geom_text(aes(V1, V2, label = STUSPS), size = 5, color = "white") +
