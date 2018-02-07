@@ -46,9 +46,9 @@ p_load(geogrid, magrittr, maptools, raster, rvest, tidyverse, tmap)
 
 ## Scraping data from the web
 
-The `rvest` package provides a convenient way to scrape information from web pages. You can easily create an html document from a URL with `read_html()` and select the parts of the document you'd like to extract with `html_nodes()`, using either `CSS` or `XPath` selectors. You can locate these parts by right clicking on the respective page, selecting *inspect element* and C&Ping the path. Alternatively, you can use <a href="http://selectorgadget.com/">SelectorGadget</a>). 
+The `rvest` package provides a convenient way to scrape information from web pages. You can easily create an html document from a URL with `read_html()` and select the parts of the document you'd like to extract with `html_nodes()`, using either `CSS` or `XPath` selectors. You can locate these nodes by right clicking on the respective web page, selecting *inspect element* and C&Ping the path. Alternatively, you can use <a href="http://selectorgadget.com/">SelectorGadget</a>). 
 
-Historical data on executions in the United States can be scraped from <a href="http://deathpenaltyusa.org/">deathpenaltyusa.org</a>. Since I wanted to extract information from multiple web pages at once, I followed <a href="https://stackoverflow.com/questions/40140133/scraping-tables-on-multiple-web-pages-with-rvest-in-r">this approach</a> by creating all URLs and then looping over them with `lapply` to download the tables. At first this looked quite simple, but it turned out to be a bit more complicated due to differend paths. In the end, I came up with this rather functional code (if somebody knows a more elegant solution, please let me know):
+Historical data on executions in the US can be scraped from <a href="http://deathpenaltyusa.org/">deathpenaltyusa.org</a>. Since I wanted to extract information from multiple pages at once, I followed <a href="https://stackoverflow.com/questions/40140133/scraping-tables-on-multiple-web-pages-with-rvest-in-r">this approach</a> by creating the URLs first and then looping over them with `lapply` to download the tables. When I started this looked quite promising, but it turned out to be a bit more complicated due to different XPaths. In the end, I came up with this rather functional code (if somebody knows a more elegant solution, please let me know):
 
 ```r
 # Create URL for each year
@@ -93,11 +93,13 @@ death_penalty_missing2 <- lapply(urls_missing2, get_table_missing2)
 
 ## Data wrangling
 
+After scraping the data from the web, some data cleaning needs to be done.  
+
 ```r
 # Convert lists to data.frame
 death_penalty_df <- do.call(rbind, lapply(c(death_penalty, death_penalty_missing, death_penalty_missing2), data.frame))
 
-# Convert text to lowercase
+# Convert strings to lowercase
 death_penalty_df %<>% 
   rename_all(tolower) %>%
   mutate_all(tolower)
@@ -111,7 +113,7 @@ death_penalty_df <- subset(death_penalty_df, !is.na(id))
 # Change class to numeric
 death_penalty_df[, c("day", "year")] <- lapply(death_penalty_df[, c("day", "year")], as.numeric)
 
-# Replace ? with "Unknown
+# Replace ? with Unknown
 death_penalty_df %<>%
   mutate_all(funs(gsub("\\?", "unknown", .))) %>%
   mutate_all(funs(gsub("^$", "unknown", .))) 
@@ -170,9 +172,9 @@ US_shp_cropped <- crop(US_shp, extent(-124.848974, -66.885444, 24.396308, 49.384
 
 ## Mapping executions with *tmap*
 
-The following choropleth map of the US states, which are shaded in relation to the number of executions, was created with `tmap`.
+The following choropleth map, which depicts the US states being shaded in relation to the number of executions, was created with `tmap`.
 
-Note that *no data* could either mean that there is no data available or there actually were no executions carried out during the considered period (see <a href="http://deathpenaltyusa.org/usa1/indexstate1.htm">here</a> for more information on which years the raw data for each state covers).
+Note that *no data* could either mean that there is no data available or there actually were no executions carried out during the considered period. See <a href="http://deathpenaltyusa.org/usa1/indexstate1.htm">deathpenaltyusa.org</a> for more information on which years the raw data for each state covers.
 
 ```r
 # Count deaths by state

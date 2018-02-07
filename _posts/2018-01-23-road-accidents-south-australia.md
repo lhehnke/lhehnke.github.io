@@ -54,7 +54,7 @@ accidents <- read_csv("2016_DATA_SA_Crash.csv")
 unlink(temp)
 ```
 
-After getting the data into `R` some minor data cleaning is required.  
+After getting the data into `R`, some minor data cleaning is required.  
 
 ```r
 # Replace blank spaces in column names with underscores and convert letters to lowercase
