@@ -18,7 +18,7 @@ tags:
 
 As of lately, both web scraping and criminology really caught my interest and I've been planning on exploiting the synergy effects of the two topics for quite a while now. To make a long story short, this initial idea finally resulted in a rather extensive data set on executions in the United States during the 19th century, containing biographical and juridical information on executed criminals (N = 5455). You can access the data <a href="https://github.com/lhehnke/crime-data">here</a>.
 
-This blog post covers scraping the raw data from its <a href="http://deathpenaltyusa.org/">source</a>, processing it, and doing some basic maps and (longitudinal) visualizations using `tmap` and `ggplot2`. 
+This blog post covers scraping the raw data from its <a href="http://deathpenaltyusa.org/">source</a>, processing it, and doing some choropleth maps and (longitudinal) visualizations using `tmap` and `ggplot2`. 
 
 In addition to the standard choropleth map, I gave Joseph Bailey's <a href="https://github.com/jbaileyh/geogrid">geogrid package</a> for turning spatial polygons into hexagonal grids a try, yielding this fancy-looking map of the total number of executions in the US from 1801 to 1900:
 
@@ -154,7 +154,7 @@ death_penalty_df$race %<>% gsub("nat amer", "native american", .)
   
 ## Downloading and importing US shapefiles
 
-US shapefiles can be obtained from the <a href="https://www.census.gov/geo/reference/gtc/gtc_maftiger.html">Census Bureau’s MAF/TIGER geographic database</a>. For both the choropleth and the hexagonal map I chose state-level shapefiles and cropped them the geographic extent of Continental US.
+US shapefiles can be obtained from the <a href="https://www.census.gov/geo/reference/gtc/gtc_maftiger.html">Census Bureau’s MAF/TIGER geographic database</a>. For both the standard choropleth and the hexagonal map I chose state-level shapefiles and cropped them the geographic extent of Continental US.
 
 To import the shapefiles, either download `cb_2014_us_state_5m.zip` manually, unzip it and load `cb_2014_us_state_5m.shp` into `R` or simply use this automated code:
 
@@ -172,7 +172,7 @@ US_shp_cropped <- crop(US_shp, extent(-124.848974, -66.885444, 24.396308, 49.384
 
 ## Mapping executions with *tmap*
 
-The following choropleth map, which depicts the US states being shaded in relation to the number of executions, was created with `tmap`.
+The following choropleth map, which depicts the US states shaded according to the number of executions, was created with `tmap`.
 
 Note that *no data* could either mean that there is no data available or there actually were no executions carried out during the considered period. See <a href="http://deathpenaltyusa.org/usa1/indexstate1.htm">deathpenaltyusa.org</a> for more information on which years the raw data for each state covers.
 
@@ -209,7 +209,7 @@ save_tmap(map, "Executions_1801-1900.png", width = 1460, height = 615)
 
 With the `geogrid` package you can go one step further and turn spatial polygons into hexagonal (or regular, for that matter) grids in two steps: First, generate the grid with `calculate_grid()` and, second, use an algorithm to efficiently calculate the assignments from the original geography to the new geography. 
 
-The following code snippet is adapted from Joseph's <a href="https://github.com/jbaileyh/geogrid#example">sample code</a> for demonstration purposes.
+For demonstrations purposes, the following code snippet is adapted from Joseph's <a href="https://github.com/jbaileyh/geogrid#example">sample code</a>.
 
 ```r
 # Calculate hexagonal grid
