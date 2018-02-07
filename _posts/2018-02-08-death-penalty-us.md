@@ -18,7 +18,7 @@ tags:
 
 As of lately, both web scraping and criminology really caught my interest and I've been planning on exploiting the synergy effects of the two topics for quite a while now. To make a long story short, this initial idea finally resulted in a rather extensive data set on executions in the United States during the 19th century, containing biographical and juridical information on executed criminals (N = 5455). You can access the data <a href="https://github.com/lhehnke/crime-data">here</a>.
 
-This blog post covers scraping the raw data from its <a href="http://deathpenaltyusa.org/">source</a>, processing it, and doing some choropleth maps and (longitudinal) visualizations using `tmap` and `ggplot2`. 
+This blog post covers scraping the raw data from its <a href="http://deathpenaltyusa.org/">source</a>, processing it, and creating some choropleth maps and basic visualizations using `tmap` and `ggplot2`. 
 
 In addition to the standard choropleth map, I gave Joseph Bailey's <a href="https://github.com/jbaileyh/geogrid">geogrid package</a> for turning spatial polygons into hexagonal grids a try, yielding this fancy-looking map of the total number of executions in the US from 1801 to 1900:
 
@@ -46,9 +46,9 @@ p_load(geogrid, magrittr, maptools, raster, rvest, tidyverse, tmap)
 
 ## Scraping data from the web
 
-The `rvest` package provides a convenient way to scrape information from web pages. You can easily create an html document from a URL with `read_html()` and select the parts of the document you'd like to extract with `html_nodes()`, using either `CSS` or `XPath` selectors. You can locate these nodes by right clicking on the respective web page, selecting *inspect element* and C&Ping the path. Alternatively, you can use <a href="http://selectorgadget.com/">SelectorGadget</a>). 
+The `rvest` package provides a convenient way to scrape information from web pages. You can easily create an html document from a URL with `read_html()` and select the parts of the document you'd like to extract with `html_nodes()`, using either `CSS` or `XPath` selectors. You can locate these nodes by right clicking on the respective web page, selecting *inspect element* and C&Ping the path. Alternatively, you can use <a href="http://selectorgadget.com/">SelectorGadget</a>. 
 
-Historical data on executions in the US can be scraped from <a href="http://deathpenaltyusa.org/">deathpenaltyusa.org</a>. Since I wanted to extract information from multiple pages at once, I followed <a href="https://stackoverflow.com/questions/40140133/scraping-tables-on-multiple-web-pages-with-rvest-in-r">this approach</a> by creating the URLs first and then looping over them with `lapply` to download the tables. When I started this looked quite promising, but it turned out to be a bit more complicated due to different XPaths. In the end, I came up with this rather functional code (if somebody knows a more elegant solution, please let me know):
+Historical data on executions in the US can be scraped from <a href="http://deathpenaltyusa.org/">deathpenaltyusa.org</a>. Since I wanted to extract tables from multiple pages at once, I followed <a href="https://stackoverflow.com/questions/40140133/scraping-tables-on-multiple-web-pages-with-rvest-in-r">this approach</a> by creating the URLs first and then looping over them with `lapply()` to download the tables. When I started this looked quite promising, but it turned out to be a bit more complicated due to different XPaths. In the end, I came up with this rather functional code (if somebody knows a more elegant solution, please let me know):
 
 ```r
 # Create URL for each year
@@ -93,7 +93,7 @@ death_penalty_missing2 <- lapply(urls_missing2, get_table_missing2)
 
 ## Data wrangling
 
-After scraping the data from the web, some data cleaning needs to be done.  
+After scraping the data from the web, some data cleaning needed to be done.  
 
 ```r
 # Convert lists to data.frame
