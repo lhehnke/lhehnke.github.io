@@ -205,7 +205,7 @@ save_tmap(map, "Executions_1801-1900.png", width = 1460, height = 615)
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900.png" width="973px" height="410x" vspace="50px"/></p>
 
-## Mapping exeuction with *geogrid*
+## Mapping executions with *geogrid*
 
 With the `geogrid` package you can go one step further and turn spatial polygons into hexagonal (or regular, for that matter) grids in two steps: First, generate the grid with `calculate_grid()` and, second, use an algorithm to efficiently calculate the assignments from the original geography to the new geography. 
 
