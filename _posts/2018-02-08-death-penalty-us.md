@@ -113,12 +113,12 @@ death_penalty_df <- subset(death_penalty_df, !is.na(id))
 # Change class to numeric
 death_penalty_df[, c("day", "year")] <- lapply(death_penalty_df[, c("day", "year")], as.numeric)
 
-# Replace ? with unknown
+# Replace ? and blanks with unknown
 death_penalty_df %<>%
   mutate_all(funs(gsub("\\?", "unknown", .))) %>%
   mutate_all(funs(gsub("^$", "unknown", .))) 
 
-# Sort data
+# Sort data by year and id
 death_penalty_df %<>% arrange(year, id)
 
 # Clean up type of crime
@@ -280,7 +280,7 @@ ggsave("plot.png", width = 12, height = 8, units = "in", dpi = 100)
 
 ## Visualizing executions by attributes
 
-The last couple of plots depict the number of executions by crime, sex, race, and method. Since they're quite self-explanatory, I won't go further into the details and leave you alone with them.
+The last couple of plots depict the number of executions by crime, sex, race, and method. Since they're quite self-explanatory, I won't go further into the details here and leave you alone with them.
 
 ```r
 # Plot executions by crime
