@@ -172,7 +172,7 @@ US_shp_cropped <- crop(US_shp, extent(-124.848974, -66.885444, 24.396308, 49.384
 
 ## Mapping executions with *tmap*
 
-The following choropleth map, which depicts the US states shaded according to the number of executions, was created with `tmap`.
+The following choropleth map, which depicts the US states shaded in relation to the number of executions, was created with `tmap`.
 
 Note that *no data* could either mean that there is no data available or there actually were no executions carried out during the considered period. See <a href="http://deathpenaltyusa.org/usa1/indexstate1.htm">deathpenaltyusa.org</a> for more information on which years the raw data for each state covers.
 
@@ -330,3 +330,5 @@ death_penalty_df %>%
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/plot3.png" width="600px" height="500px" vspace="50px"/></p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/plot4.png" width="600px" height="500px" vspace="50px"/></p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/plot5.png" width="600px" height="500px" vspace="50px"/></p>
