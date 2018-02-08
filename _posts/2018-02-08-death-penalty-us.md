@@ -22,7 +22,7 @@ This blog post covers scraping the raw data from its <a href="http://deathpenalt
 
 In addition to the standard choropleth map, I gave Joseph Bailey's <a href="https://github.com/jbaileyh/geogrid">geogrid package</a> for turning spatial polygons into hexagonal grids a try, yielding this fancy-looking map of the total number of executions in the US from 1801 to 1900:
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900_hex.png" width="600px" height="240x" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900_hex.png" width="652px" height="260x" vspace="50px"/></p>
 
 And if you're interested in reproducing this map, here you go!
 
@@ -203,7 +203,7 @@ map
 save_tmap(map, "Executions_1801-1900.png", width = 1460, height = 615) 
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900.png" width="600px" height="240x" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900.png" width="652px" height="260x" vspace="50px"/></p>
 
 ## Mapping executions with *geogrid*
 
@@ -236,7 +236,7 @@ ggplot(result_hex_df) +
 ggsave("Executions_1801-1900_hex.png", width = 15, height = 6, units = "in", dpi = 100)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900_hex.png" width="600px" height="240x" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900_hex.png" width="652px" height="260x" vspace="50px"/></p>
 
 ## Visualizing executions over time
 
