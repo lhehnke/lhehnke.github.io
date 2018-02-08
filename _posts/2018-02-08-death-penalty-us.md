@@ -127,7 +127,8 @@ death_penalty_df$crime %<>%
   gsub("accessory to \r\n    mur", "accessory to crime", .) %>%  
   gsub("consp to \r\n    murder", "accessory to crime", .) %>%
   gsub("rape-theft-robbery", "rape", .) %>% 
-  gsub("rape-robbery", "rape", .) %>%   gsub("attempted \r\nrape", "rape", .) %>% 
+  gsub("rape-robbery", "rape", .) %>%   
+  gsub("attempted \r\nrape", "rape", .) %>% 
   gsub("murder-burglary", "murder", .) %>%
   gsub("robbery-murder", "murder", .) %>%
   gsub("theft-murder", "murder", .) %>%
