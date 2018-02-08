@@ -203,7 +203,7 @@ map
 save_tmap(map, "Executions_1801-1900.png", width = 1460, height = 615) 
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900.png" width="973px" height="410x" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/death-penalty/Executions_1801-1900.png" width="600px" height="240x" vspace="50px"/></p>
 
 ## Mapping executions with *geogrid*
 
