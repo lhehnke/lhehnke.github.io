@@ -66,8 +66,7 @@ get_table <- function(url) {
 death_penalty <- lapply(urls, get_table)
 
 # Create URLs for missing years and scrape corresponding tables
-years_missing <- c("1864", "1877", "1878", "1879", "1880", "1881", "1882", "1883",
-                   "1892", "1893", "1894", "1895", "1896", "1897", "1898")
+years_missing <- c("1864", "1877", "1878", "1879", "1880", "1881", "1882", "1883", "1892", "1893", "1894", "1895", "1896", "1897", "1898")
 years_missing2 <- c("1848", "1876", "1891")
 
 urls_missing <- paste0("http://deathpenaltyusa.org/usa1/date/", years_missing, ".htm") 
