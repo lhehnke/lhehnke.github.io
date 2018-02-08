@@ -122,25 +122,11 @@ death_penalty_df %<>% arrange(year, id)
 
 # Clean up type of crime
 death_penalty_df$crime %<>%
-  gsub("aid runaway \r\n    slve", "accessory to crime", .) %>%
-  gsub("accessory to \r\n    mur", "accessory to crime", .) %>%  
-  gsub("consp to \r\n    murder", "accessory to crime", .) %>%
-  gsub("rape-theft-robbery", "rape", .) %>% 
-  gsub("rape-robbery", "rape", .) %>%   
-  gsub("attempted \r\nrape", "rape", .) %>% 
-  gsub("murder-burglary", "murder", .) %>%
-  gsub("robbery-murder", "murder", .) %>%
-  gsub("theft-murder", "murder", .) %>%
-  gsub("kidnap-murder", "murder", .) %>%
-  gsub("rape-murder", "murder", .) %>%
-  gsub("murder-rape-rob", "murder", .) %>%
-  gsub("arson-murder", "murder", .) %>%
-  gsub("attempted \r\n    murder", "murder", .) %>%
-  gsub("robbery", "theft/robbery", .) %>%
-  gsub("horse \r\nstealing", "theft/robbery", .) %>%
-  gsub("theft-stealing", "theft/robbery", .) %>%
-  gsub("housebrkng-burgl", "burglary", .) %>%
-  gsub("burg-att rape", "burglary", .) %>% 
+  gsub("aid runaway \r\n    slve|accessory to \r\n    mur|consp to \r\n    murder", "accessory to crime", .) %>%
+  gsub("rape-theft-robbery|rape-robbery|attempted \r\nrape", "rape", .) %>% 
+  gsub("murder-burglary|robbery-murder|theft-murder|kidnap-murder|rape-murder|murder-rape-rob|arson-murder|attempted \r\n    murder", "murder", .) %>%
+  gsub("robbery|horse \r\nstealing|theft-stealing", "theft/robbery", .) %>%
+  gsub("housebrkng-burgl|burg-att rape", "burglary", .) %>%
   gsub("guerilla \r\n    activit", "guerilla activity", .) %>%  
   gsub("sodmy-buggry-bst", "buggery/bestiality", .) %>% 
   gsub("unspec felony", "other", .) %>% 
