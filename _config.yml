@@ -2,7 +2,7 @@ permalink: /notes/:year/:month/:day/:title
 markdown: kramdown
 excerpt_separator: "<!--more-->"
 title: Data Planes | Data Science Blog by Lisa Hehnke
-description: Lisa Hehnke is a researcher turned data scientist, psych student, and aviation enthusiast from Hamburg, Germany. Her work mainly focuses on spatial analyses, computational social science, and serial killers.
+description: In computing, data planes are the parts of a network that carry user traffic. DataPlanes.org builds on this idea by carrying information on data science and sharing reproducible code, aiming to contribute to the Open Science initiative.
 url: http://lhehnke.github.io
 
 #logo: logo.png
@@ -13,11 +13,6 @@ owner:
   email:          lisa.hehnke@googlemail.com
   twitter:        DataPlanes
   github:         lhehnke    
-
-analytics:
-  provider: "google"
-  google:
-tracking_id: UA-113150251-1
 
 highlighter: rouge
 
