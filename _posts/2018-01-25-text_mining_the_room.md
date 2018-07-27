@@ -64,7 +64,7 @@ Concretely, this means separating the lines of the raw text (`\n` indicating lin
 
 For most of these steps `lapply()` can be used to apply the respective functions to each element of the list. 
 
-While performing these steps, the cleaned text, which consists of a sequence of strings, is splitted into single words -- a process called *tokenization*.
+While performing these steps, the cleaned text, which consists of a sequence of strings, is split into single words -- a process called *tokenization*.
 
 ```r
 # Separate lines with \n indicating line breaks
@@ -192,7 +192,7 @@ As the second sentiment graph shows, the most common positive words in The Room 
   
 ## Word clouds
 
-To finish it up we now finally plot one of the infamous word clouds (albeit in a slightly more advanced version) by constrasting the most common positive and negative words  
+To finish it up, we now finally plot one of the infamous word clouds (albeit in a slightly more advanced version) by contrasting the most common positive words with the most common negative ones,  
   
 ```r
 # Plot comparison cloud in ggplot2 colors
