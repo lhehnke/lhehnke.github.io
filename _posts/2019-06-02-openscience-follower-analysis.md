@@ -13,6 +13,10 @@ tags:
 - web scraping
 ---
 
+*Acknowledgements* Thanks to [Jon Tennant](http://fossilsandshit.com/) for providing valuable input and diligent proofreading skills for this blog post.
+
+*Replication, replication* GDPR approved code and data can be found [here](https://github.com/lhehnke/opensciencemooc-followers).
+
 ## Introduction
 
 As of lately, several friends of mine tried to convince me to resume writing and this was when I remembered that I apparently once thought so as well when creating this blog. One of those friends happened to be [Jon Tennant](http://fossilsandshit.com/), dinosaur whisperer from Brexit land and founder of the [Open Science MOOC](https://opensciencemooc.eu/).
@@ -212,7 +216,7 @@ ggplot() +
                     axis.ticks = element_blank())
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-static-map1-2.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-static-map2-1.png" vspace="50px"/></p>
 
 The static maps above can be supplemented by creating an interactive map using `leaflet`, which allows to zoom into all areas and take a closer look at specific countries and regions.
 
@@ -438,7 +442,7 @@ desc_tidy %>%
   wordcloud2(color = "#2c3e50")
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/word-cloud-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/word-cloud.png" vspace="50px"/></p>
 
 The word cloud above shows that at least two well-known hashtags, *\#opensci* and *\#openaccess*, are prominently featured in the Open Science Twitter MOOC-ers profiles. Are there any other hashtags that are also frequently mentioned?
 
