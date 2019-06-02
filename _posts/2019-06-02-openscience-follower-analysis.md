@@ -3,7 +3,7 @@ layout: post
 title: "Analyzing the Open Science MOOC Twitter community"
 date: "June 03, 2019"
 type: post
-published: false
+published: true
 status: publish
 categories:
 - Twitter analyses 
@@ -607,7 +607,7 @@ desc_tidy %>%
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/pos-neg-word-counts-1.png" vspace="50px"/></p>
 
-To get a broader picture of the most common positive and negative words, they can also be visualize in a comparison cloud.
+To get a broader picture of the most common positive and negative words, they can also be visualized in a comparison cloud.
 
 ```r
 # Plot comparison cloud
