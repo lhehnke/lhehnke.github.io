@@ -106,7 +106,7 @@ relations_df %>%
   theme(legend.position = "none")
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/friends-followers-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/friends-followers-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 ## Locating the Twitter bubble
 
@@ -150,7 +150,7 @@ data_df %>%
   coord_flip() + viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 To investigate this interesting finding further, I geocoded all available locations using the [OpenStreetMap Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) API. The `geocode_OSM()` function of the `tmaptools` package is one of the available options for geocoding a location to its coordinates; alternatives are `ggmap` or `opencage`. When setting `as.data.frame = TRUE`, `geocode_OSM()` returns a data frame containing the latitude and longitude of each location. After obtaining the results, I removed both unspecific (e.g. administrative boundaries) and overly specific locations (e.g. localities or amenities) by filtering all observations that match the `type == city` condition.
 
@@ -192,7 +192,7 @@ ggplot() +
                     axis.ticks = element_blank())
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-static-map1-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-static-map1-1.png" width="655px" height="280px" vspace="30px"/></p>
 
 In a slightly more advanced version of this map, I added further information on the follower count of the geocoded users, which results in a similar picture: The majority of the influential Open Science Twitter MOOC-ers are based in Western Europe and the United States. I will revisit this notion later on in the blog post when conducting a more fine-grained analysis of the most prominent followers.
 
@@ -213,7 +213,7 @@ ggplot() +
                     axis.ticks = element_blank())
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-static-map2-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/locations-static-map2-1.png" width="655px" height="280px" vspace="30px"/></p>
 
 The static maps above can be supplemented by creating an interactive map using `leaflet`, which allows to zoom into all areas and take a closer look at specific countries and regions.
 
@@ -291,7 +291,7 @@ followers_gender %>%
   theme(legend.position = "none")
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/gender-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/gender-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 To get a better picture of how inclusive the Open Science MOOC Twitter community is, I additionally classified all followers based on their respective account status. This approach was adapted from a blog post on [analyzing social movements on Twitter](https://correlaid.org/blog/we2-twitter-analysis/) that I co-wrote with my fellow CorrelAider [Konstantin Gavras](http://konstantin.gavras.de/) for the European elections in May 2019.
 
@@ -327,7 +327,7 @@ data_df %>%
   theme(legend.position = "none")
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/account-status-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/account-status-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 ## Followers or leaders?
 
@@ -345,7 +345,7 @@ data_df %>%
   coord_flip() + viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/influential-followers-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/influential-followers-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 To get a more detailed picture, let us also have a look at the most active followers. Here, I followed Shirin's example and normalized the number of statuses, meaning tweets and retweets, each account shared by the number of days the account existed.
 
@@ -370,7 +370,7 @@ data_df %>%
   coord_flip() + viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/active-followers-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/active-followers-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 And yes, there is a correlation between the number of followers and the number of tweets, indicating that Open Science MOOC-ers with many followers also tend to tweet more often.
 
@@ -384,7 +384,7 @@ data_df %>%
     viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/correlation-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/correlation-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 ## Activities, interests, and opinions
 
@@ -429,7 +429,7 @@ desc_tidy %>%
   coord_flip() + viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/word-counts-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/word-counts-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 ```r
 # Plot word cloud
@@ -439,7 +439,7 @@ desc_tidy %>%
   wordcloud2(color = "#2c3e50")
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/word-cloud.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/word-cloud.png" width="655px" height="418px" vspace="30px"/></p>
 
 The word cloud above shows that at least two well-known hashtags, *\#opensci* and *\#openaccess*, are prominently featured in the Open Science Twitter MOOC-ers profiles. Are there any other hashtags that are also frequently mentioned?
 
@@ -460,7 +460,7 @@ desc_tidy %>%
   coord_flip() + viz_theme + ylim(0, 250)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/hashtags-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/hashtags-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 In addition to the hashtags, I looked at the \@-mentions in the Open Science MOOC-ers Twitter profiles as well. Among the most common mentions of the followers are (presumably) their respective past and current institutional affiliations. Here, the universities Oxford, Stanford and Maastricht were mentioned quite frequently.
 
@@ -481,7 +481,7 @@ desc_tidy %>%
   coord_flip() + viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/mentions-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/mentions-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 Up to this point, the content analysis relied on words as individual units. Since we're also interested in extracting co-occurring words or word sequences (examples might be *phd student* or *data science*), we now go one step further and analyze the relationship between two consecutive words by tokenizing the profile texts into pairs of adjacent words, called *bigrams*.
 
@@ -513,7 +513,7 @@ bigrams_tidy %>%
   coord_flip() + viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/bigram-counts-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/bigram-counts-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 These bigram counts can also be transformed into a graph object and visualized as a bigram network, with the nodes and edges being defined as follows: The source is the first word and the target is the second word in a pair of consecutive words. Edges are the connections between two nodes whenever both words co-occurred at least ten times in the followers' profile descriptions. This threshold was chosen for visual reasons in order to make the depicted bigrams easier to read. The width of the edges reflects how common or rare each bigram is.
 
@@ -541,7 +541,7 @@ ggraph(bigram_graph, layout = "nicely") +
                     axis.ticks = element_blank())
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/bigram-network-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/bigram-network-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 The final part of this analysis deals with the sentiments conveyed in the Open Science MOOC-ers profile descriptions. The sentiment analysis below is based on a dictionary approach using Bing Liu et al.'s [sentiment lexicon](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html). This dictionary contains approximately 6800 English sentiment words that were classified according to whether they have a positive or negative connotation, along with their assigned numerical values. These lists can then be used to match the words that followers use in their profile description with those included in the dictionary.
 
@@ -564,7 +564,7 @@ desc_tidy %>%
   theme(legend.position = "none") + viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/sentiment-counts-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/sentiment-counts-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 ```r
 # Plot sentiment distribution
@@ -582,7 +582,7 @@ desc_tidy %>%
   viz_theme
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/sentiment-distribution-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/sentiment-distribution-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 But which words are actually classified as positive and negative? The following overview shows that several of the words the Open Science MOOC-ers presumably use to describe both themselves (e.g. *enthusiast*, *advocate*, *lover*) and their preferences and characteristics (e.g. *love(s)*, *passionate*, *proud*) are among the most frequently used positive words in their profile descriptions. Negative words include for instance the word *cancer*, which may either indicate the respective followers' own research interests, zodicac signs or possibly refer to their own medical history.
 
@@ -605,7 +605,7 @@ desc_tidy %>%
   viz_theme + coord_flip() + ylim(0, 150)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/pos-neg-word-counts-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/pos-neg-word-counts-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 To get a broader picture of the most common positive and negative words, they can also be visualized in a comparison cloud.
 
@@ -619,7 +619,7 @@ desc_tidy %>%
                    max.words = 200)
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/comparison-cloud-1.png" vspace="50px"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/comparison-cloud-1.png" width="655px" height="524px" vspace="30px"/></p>
 
 ## Conclusion
 
