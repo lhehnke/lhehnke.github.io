@@ -32,7 +32,7 @@ In this blog post, I am now going to analyze this data in order to answer the fo
 (4) Who are the most influential and active followers? Could they potentially start a revolution, take over the Twitter community, and throw Jon off the Open Science throne?
 (5) What do the followers state in their own profile descriptions? Which institutions are they affiliated with? Which opinions do they express? And last but certainly not least: Do their own texts say anything meaningful about the interests and research activities of the Open Science Twitter MOOC-ers (spoiler alert: yes)?
 
-*&ast;Just kidding, of course I skipped this part. But make sure to follow the Open Science MOOC, one never knows what the future might bring... Just kidding again.*
+* *Just kidding, of course I skipped this part. But make sure to follow the Open Science MOOC, one never knows what the future might bring... Just kidding again.*
 
 ## Collecting Twitter data
 
