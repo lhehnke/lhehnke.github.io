@@ -13,9 +13,9 @@ tags:
 - web scraping
 ---
 
-*Acknowledgements* Thanks to [Jon Tennant](http://fossilsandshit.com/) for providing valuable input and diligent proofreading skills for this blog post.
+*Acknowledgements:* Thanks to [Jon Tennant](http://fossilsandshit.com/) for providing valuable input and diligent proofreading skills for this blog post.
 
-*Replication, replication* GDPR approved code and data can be found [here](https://github.com/lhehnke/opensciencemooc-followers).
+*Replication, replication:* GDPR approved code and data can be found [here](https://github.com/lhehnke/opensciencemooc-followers).
 
 ## Introduction
 
