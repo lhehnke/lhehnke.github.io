@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scraping and visualizing historical data on executions in the US"
-date: "Februar 08, 2018"
+date: "February 08, 2018"
 type: post
 published: true
 status: publish

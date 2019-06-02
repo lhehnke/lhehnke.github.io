@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Analyzing the Open Science MOOC Twitter community"
-date: "June 02, 2019"
+date: "June 03, 2019"
 type: post
 published: false
 status: publish
