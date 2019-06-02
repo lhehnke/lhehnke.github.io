@@ -81,8 +81,8 @@ viz_theme <- theme(
   panel.grid.minor = element_blank(),
   plot.caption = element_text(colour = "#3e5871"),
   strip.background = element_rect(colour = "#2c3e50", fill = "white"),
-  strip.text = element_text(size = rel(1)),
-  text = element_text(colour = "#2c3e50"))
+  strip.text = element_text(size = rel(1), face = "bold"),
+  text = element_text(size = 14, colour = "#2c3e50", family = "Avenir"))
 ```
 
 ## Friend or follow?
@@ -100,9 +100,9 @@ relations_df %>%
   ggplot(mapping = aes(x = relation, fill = relation)) +
   scale_fill_manual(" ", values = c("#6c7a89", "#2C3E50", "#22313f")) +
   scale_x_discrete(labels = c("Friend & follower", "Follower", "Friend")) +
-  viz_theme + ylab("") + xlab("") +
+  viz_theme + ylab("Count") + xlab("") +
   geom_bar(alpha = 0.8, width = 0.5) + ylim(0, 4000) +
-  ggtitle(label = "Count of Open Science MOOC Twitter followers & friends", subtitle = " ") +
+  ggtitle(label = "Open Science MOOC Twitter followers & friends", subtitle = " ") +
   theme(legend.position = "none")
 ```
 
@@ -146,7 +146,7 @@ data_df %>%
   top_n(20, n) %>%
   ggplot(aes(city_clean, n)) +
   geom_bar(stat = "identity", width = 0.5, alpha = 0.8, color = "#2c3e50", fill = "#2c3e50") +
-  xlab("") + ylab("") + ggtitle("Top locations of Open Science Twitter MOOC-ers", subtitle = " ") +
+  xlab("") + ylab("Count") + ggtitle("Top locations of Open Science Twitter MOOC-ers", subtitle = " ") +
   coord_flip() + viz_theme
 ```
 
@@ -201,7 +201,7 @@ In a slightly more advanced version of this map, I added further information on 
 ggplot() +
   geom_polygon(data = map_world, aes(x = long, y = lat, group = group), colour = "gray85", fill = "gray80") +
   geom_point(data = data_df, aes(x = lon, y = lat, size = followersCount), color = "#2c3e50", alpha = 0.5) +
-  ggtitle(label = "Locations of Open Science Twitter MOOC-ers", subtitle = "Marker sizes relative to followers' followers counts (N = 2220)") +
+  ggtitle(label = "Locations of Open Science Twitter MOOC-ers", subtitle = "Marker sizes relative to followers' followers count (N = 2220)") +
   scale_size_continuous(range = c(1, 6), limits = c(0, 300000),
                         breaks = c(0, 1000, 10000, 100000, 200000, 300000),
                         labels = function(x) format(x, scientific = FALSE)) +
@@ -285,9 +285,9 @@ followers_gender %>%
   ggplot(mapping = aes(x = gender, fill = gender)) +
   scale_fill_manual(" ", values = c("#6c7a89", "#22313f")) +
   scale_x_discrete(labels = c("Female", "Male")) +
-  viz_theme + ylab("") + xlab("") +
+  viz_theme + ylab("Count") + xlab("") +
   geom_bar(alpha = 0.8, width = 0.5) +
-  ggtitle(label = "Count of Open Science Twitter MOOC-ers by gender", subtitle = "Gender predicted with genderize.io (random sample of N = 1000 followers)") +
+  ggtitle(label = "Open Science Twitter MOOC-ers by gender", subtitle = "Gender predicted with genderize.io (random sample of N = 1000 followers)") +
   theme(legend.position = "none")
 ```
 
@@ -321,9 +321,9 @@ data_df %>%
   ggplot(mapping = aes(x = category, fill = category)) +
   scale_fill_manual(" ", values = c("#C0392B", "#2C3E50", "#16A085", "#F1C40F")) +
   scale_x_discrete(labels = c("Influencer", "Personal account", "Verified account", "Verified influencer")) +
-  viz_theme + ylab("") + xlab("") +
+  viz_theme + ylab("Count") + xlab("") +
   geom_bar(alpha = 0.8, width = 0.5) +
-  ggtitle(label = 'Number of Open Science Twitter MOOC-ers by account status', subtitle = "Influencer: at least 500 followers and at least thrice as many followers than friends \nVerified: official verification status") + ylim(0, 6000) +
+  ggtitle(label = 'Open Science Twitter MOOC-ers by account status', subtitle = "Influencer = at least 500 followers and at least thrice as many followers than friends \nVerified = official verification status") + ylim(0, 6000) +
   theme(legend.position = "none")
 ```
 
@@ -340,7 +340,7 @@ data_df %>%
   mutate(screenName = reorder(screenName, followersCount)) %>%
   ggplot(aes(screenName, followersCount, label = followersCount)) +
   geom_bar(stat = "identity", width = 0.5, alpha = 0.8, color = "#2c3e50", fill = "#2c3e50") +
-  xlab("") + ylab("") + ggtitle("Most influential Open Science MOOC-ers", subtitle = "Followers count") +
+  xlab("") + ylab("Followers count") + ggtitle("Most influential Open Science MOOC-ers", subtitle = " ") +
   scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
   coord_flip() + viz_theme
 ```
@@ -365,7 +365,7 @@ data_df %>%
   mutate(screenName = reorder(screenName, statuses_day)) %>%
   ggplot(aes(screenName, statuses_day, label = statuses_day)) +
   geom_bar(stat = "identity", width = 0.5, alpha = 0.8, color = "#2c3e50", fill = "#2c3e50") +
-  xlab("") + ylab("") + ggtitle("Most active Open Science MOOC-ers", subtitle = "Average number of tweets per day") +
+  xlab("") + ylab("Average number of tweets per day") + ggtitle("Most active Open Science MOOC-ers", subtitle = " ") +
   scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) + ylim(0, 200) +
   coord_flip() + viz_theme
 ```
@@ -380,7 +380,7 @@ data_df %>%
     geom_smooth(method = "lm", color = "grey50", fill = "grey90", alpha = 0.8) +
     geom_point(alpha = 0.8) +
   scale_color_continuous("Number of days since \naccount was created", low = "#91aac3", high = "#2C3E50") +
-    xlab("Number of followers (log2)") + ylab("Average number of tweets per day (log2)") + ggtitle("Correlation between the Open Science MOOC-ers followers count and tweets per day", subtitle = " ") +
+    xlab("Number of followers (log2)") + ylab("Average number of tweets per day (log2)") + ggtitle("Correlation between followers count and tweets per day", subtitle = " ") +
     viz_theme
 ```
 
@@ -424,8 +424,8 @@ desc_tidy %>%
   top_n(20, n) %>%
   ggplot(aes(x = reorder(word_stem, n), y = n)) +
   geom_bar(stat = "identity", width = 0.5, alpha = 0.8, color = "#2c3e50", fill = "#2c3e50") +
-  ylab("") + xlab("") +
-  ggtitle(label = "Count of words in the Open Science MOOC-ers profile descriptions", subtitle = " ") + ylim(0, 1250) +
+  ylab("Count") + xlab("") +
+  ggtitle(label = "Most common words in Open Science MOOC-ers' profiles", subtitle = " ") + ylim(0, 1250) +
   coord_flip() + viz_theme
 ```
 
@@ -456,7 +456,7 @@ desc_tidy %>%
   top_n(20, n) %>%
   ggplot(aes(word, n)) +
   geom_bar(stat = "identity", width = 0.5, alpha = 0.8, color = "#2c3e50", fill = "#2c3e50") +
-  xlab("") + ylab("") + ggtitle("Most frequently used hashtags in the Open Science MOOC-ers profile descriptions", subtitle = " ") +
+  xlab("") + ylab("Count") + ggtitle("Most frequently used hashtags in Open Science MOOC-ers' profiles", subtitle = " ") +
   coord_flip() + viz_theme + ylim(0, 250)
 ```
 
@@ -477,7 +477,7 @@ desc_tidy %>%
   top_n(20, n) %>%
   ggplot(aes(word, n)) +
   geom_bar(stat = "identity", width = 0.5, alpha = 0.8, color = "#2c3e50", fill = "#2c3e50") +
-  xlab("") + ylab("") + ggtitle("Most frequently used mentions in the Open Science MOOC-ers profile descriptions", subtitle = " ") + ylim(0, 15) +
+  xlab("") + ylab("Count") + ggtitle("Most frequent mentions in Open Science MOOC-ers' profiles", subtitle = " ") + ylim(0, 15) +
   coord_flip() + viz_theme
 ```
 
@@ -509,7 +509,7 @@ bigrams_tidy %>%
   top_n(20, n) %>%
   ggplot(aes(x = reorder(bigram, n), y = n)) +
   geom_bar(stat = "identity", width = 0.5, alpha = 0.8, color = "#2c3e50", fill = "#2c3e50") +
-  xlab("") + ylab("") + ggtitle("Most common bigrams in the Open Science MOOC-ers profile descriptions", subtitle = " ") + ylim(0, 200) +
+  xlab("") + ylab("Count") + ggtitle("Most common bigrams in Open Science MOOC-ers' profiles", subtitle = " ") + ylim(0, 200) +
   coord_flip() + viz_theme
 ```
 
@@ -534,7 +534,7 @@ ggraph(bigram_graph, layout = "nicely") +
   geom_node_label(aes(label = name), vjust = 1, hjust = 0.5, label.size = 0.05,
                   label.padding = unit(0.15, "lines"), label.r = 0.05, fill = "#ffffff66",
                   color = "#2c3e50", repel = TRUE) +
-  ggtitle("Bigram network of the Open Science MOOC-ers profile descriptions", subtitle = "Edge width relative to number of times each bigram occurs") +
+  ggtitle("Bigram network of Open Science MOOC-ers' profile texts", subtitle = "Edge width relative to number of times each bigram occurs") +
   viz_theme + theme(axis.line = element_blank(),
                     axis.text = element_blank(),
                     axis.title = element_blank(),
@@ -560,7 +560,7 @@ desc_tidy %>%
   geom_bar(aes(fill = sentiment), stat = "identity", alpha = 0.8, width = 0.5) +
   scale_fill_manual(values = c("#620000","#006262")) +
   scale_x_discrete(labels = c("Negative", "Positive")) +
-  xlab("") + ylab("") + ggtitle("Count of positive and negative sentiments in the Open Science MOOC-ers profile descriptions", subtitle = "Sentiment lexicon by Bing Liu and collaborators") + ylim(0, 2000) +
+  xlab("") + ylab("Count") + ggtitle("Positive and negative sentiments in the Open Science MOOC-ers' profiles", subtitle = "Sentiment lexicon by Bing Liu and collaborators") + ylim(0, 2000) +
   theme(legend.position = "none") + viz_theme
 ```
 
@@ -578,7 +578,7 @@ desc_tidy %>%
   mutate(difference = positive - negative) %>%
   ggplot(aes(x = difference)) +
   geom_density(color = "#2c3e50", fill = "#2c3e50", alpha = 0.8) +
-  xlab("Sentiment") + ylab("Density") + ggtitle("Distribution of sentiments in the Open Science MOOC-ers profile descriptions", subtitle = "Sentiment lexicon by Bing Liu and collaborators") + ylim(0, 1.6) +
+  xlab("Sentiment") + ylab("Density") + ggtitle("Distribution of sentiments in Open Science MOOC-ers' profiles", subtitle = "Sentiment lexicon by Bing Liu and collaborators") + ylim(0, 1.6) +
   viz_theme
 ```
 
@@ -601,7 +601,7 @@ desc_tidy %>%
   scale_fill_manual(name = "Sentiment",
                     labels = c("Negative", "Positive"),
                     values = c("negative" = "#620000", "positive" = "#006262")) +
-  xlab("") + ylab("") + ggtitle("Most common positive and negative words in the Open Science MOOC-ers profile descriptions", subtitle = "Sentiment lexicon by Bing Liu and collaborators") +
+  xlab("") + ylab("Count") + ggtitle("Most common positive and negative words in Open Science MOOC-ers' profiles", subtitle = "Sentiment lexicon by Bing Liu and collaborators") +
   viz_theme + coord_flip() + ylim(0, 150)
 ```
 
@@ -616,7 +616,7 @@ desc_tidy %>%
   count(word, sentiment, sort = TRUE) %>%
   acast(word ~ sentiment, value.var = "n", fill = 0) %>%
   comparison.cloud(colors = c("#620000", "#006262"),
-                   max.words = 100)
+                   max.words = 200)
 ```
 
 <p align="center"><img src="https://raw.githubusercontent.com/lhehnke/lhehnke.github.io/master/img/osci-followers/comparison-cloud-1.png" vspace="50px"/></p>
