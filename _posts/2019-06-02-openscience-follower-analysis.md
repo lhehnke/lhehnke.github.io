@@ -13,13 +13,9 @@ tags:
 - web scraping
 ---
 
-*Acknowledgements:* Thanks to [Jon Tennant](http://fossilsandshit.com/) for providing valuable input and diligent proofreading skills for this blog post.
-
-*Replication, replication:* GDPR approved code and data can be found [here](https://github.com/lhehnke/opensciencemooc-followers).
-
 ## Introduction
 
-As of lately, several friends of mine tried to convince me to resume writing and this was when I remembered that I apparently once thought so as well when creating this blog. One of those friends happened to be [Jon Tennant](http://fossilsandshit.com/), dinosaur whisperer from Brexit land and founder of the [Open Science MOOC](https://opensciencemooc.eu/).
+As of lately, several dear friends of mine tried to convince me to resume writing and this was when I remembered that I apparently once thought so as well when creating this blog. One of those friends happened to be [Jon Tennant](http://fossilsandshit.com/), dinosaur whisperer from Brexit land and founder of the [Open Science MOOC](https://opensciencemooc.eu/).
 
 In case you have never heard of it, the Open Science MOOC is a free massive open online course hosted on [Eliademy](https://eliademy.com/opensciencemooc). It aims to equip students and researchers with the skills they need to excel in a modern research environment based on Open Science - that is, the broad adoption of good scientific practices as a fundamental and essential part of the research process. The Open MOOC brings together the efforts and resources of hundreds of researchers and practitioners who have all dedicated their time and experience to create a welcoming and supporting community platform.
 
@@ -629,3 +625,7 @@ desc_tidy %>%
 So what does this analysis tell us about the Open Science MOOC Twitter community? The findings demonstrate that a substantial number of followers of the official account are based in larger cities across Western Europe and North America. Hence, there is some evidence for the Open Science Twitter bubble being geographically clustered. Still, the Open Science MOOC-ers seem to be a diverse and inclusive community overall as both genders are represented almost equally and most followers tweet from unverified personal accounts. When it comes to the professional activities of the community members, they tend to either be PhD students, hold more senior academic positions or seem to work in closely related fields such as data science or science communication. Moreover, several followers are officially affiliated with universities, others with national and international Open Science fellowship programs or organization promoting Open Science. Many followers also actively spread the values and principles of Open Science by including hashtags referring to the various branches of Open Science - including Open Access, Open Data, Open Source, and Open Educational Resources - in their profile descriptions, which mostly convey positive sentiments.
 
 Taken together, the empirical results strongly indicate that the Open Science Twitter MOOC-ers are indeed a bunch of enthusiastic, diverse, and highly-educated science afficionados who dedicate their time and effort to actively advocate and advance Open Science.
+
+*Acknowledgements:* Thanks to [Jon Tennant](http://fossilsandshit.com/) for providing valuable input and diligent proofreading skills for this blog post.
+
+*Replication, replication:* GDPR approved code and data can be found [here](https://github.com/lhehnke/opensciencemooc-followers).
