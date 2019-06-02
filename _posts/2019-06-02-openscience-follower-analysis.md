@@ -26,13 +26,13 @@ After realizing that a) I could not get my hands on our Slack analytics due to t
 
 In this blog post, I am now going to analyze this data in order to answer the following questions:
 
-(1) Is there an overlap between the Open Science MOOC's Twitter followers and friends? Who should be immediately unfollowed for not following back?*
-(2) Where are the Open Science MOOC's twitter followers based? Is there any evidence for a geographically concentrated Open Science Twitter bubble?
-(3) What about diversity among the followers? Does the Open Science MOOC keep its promise of being an inclusive and diverse platform?
-(4) Who are the most influential and active followers? Could they potentially start a revolution, take over the Twitter community, and throw Jon off the Open Science throne?
-(5) What do the followers state in their own profile descriptions? Which institutions are they affiliated with? Which opinions do they express? And last but certainly not least: Do their own texts say anything meaningful about the interests and research activities of the Open Science Twitter MOOC-ers (spoiler alert: yes)?
+1. Is there an overlap between the Open Science MOOC's Twitter followers and friends? Who should be immediately unfollowed for not following back?* 
+2. Where are the Open Science MOOC's twitter followers based? Is there any evidence for a geographically concentrated Open Science Twitter bubble? 
+3. What about diversity among the followers? Does the Open Science MOOC keep its promise of being an inclusive and diverse platform? 
+4. Who are the most influential and active followers? Could they potentially start a revolution, take over the Twitter community, and throw Jon off the Open Science throne? 
+5. What do the followers state in their own profile descriptions? Which institutions are they affiliated with? Which opinions do they express? And last but certainly not least: Do their own texts say anything meaningful about the interests and research activities of the Open Science Twitter MOOC-ers (spoiler alert: yes)?
 
-* *Just kidding, of course I skipped this part. But make sure to follow the Open Science MOOC, one never knows what the future might bring... Just kidding again.*
+*\*Just kidding, of course I skipped this part. But make sure to follow the Open Science MOOC, one never knows what the future might bring... Just kidding again.*
 
 ## Collecting Twitter data
 
@@ -295,11 +295,11 @@ followers_gender %>%
 
 To get a better picture of how inclusive the Open Science MOOC Twitter community is, I additionally classified all followers based on their respective account status. This approach was adapted from a blog post on [analyzing social movements on Twitter](https://correlaid.org/blog/we2-twitter-analysis/) that I co-wrote with my fellow CorrelAider [Konstantin Gavras](http://konstantin.gavras.de/) for the European elections in May 2019.
 
-All followers of the Open Science MOOC were classified as follows:
-(1) Verified account: Account is officially verified by Twitter (i.e. of public interest)
-(2) Influencer: Account has at least 500 followers and at least thrice as many followers than friends
-(3) Verified influencer: Account is both officially verified and classified as an influencer
-(4) Personal account: Account is neither verified nor classified as an influencer
+All followers of the Open Science MOOC were classified as follows: 
+1. Verified account: Account is officially verified by Twitter (i.e. of public interest) 
+2. Influencer: Account has at least 500 followers and at least thrice as many followers than friends 
+3. Verified influencer: Account is both officially verified and classified as an influencer 
+4. Personal account: Account is neither verified nor classified as an influencer
 
 As can be seen in the plot below, most accounts are unverified personal ones, making the Open Science MOOC Twitter community a very inclusive digital space.
 
