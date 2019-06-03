@@ -50,6 +50,7 @@ p_load(genderizeR, ggraph, igraph, leaflet, magrittr, maps, reshape2, SnowballC,
 ```
 
 ```r
+# Twitter authentication
 options(httr_oauth_cache = TRUE)
 
 setup_twitter_oauth(consumer_key = "[INSERT OWN KEY HERE]",
@@ -70,6 +71,7 @@ friends_df <- twListToDF(osci_friends)
 ```
 
 ```r
+# Set theme
 viz_theme <- theme(
   axis.line = element_line(colour = "#2c3e50"),
   axis.text = element_text(colour = "#2c3e50"),
