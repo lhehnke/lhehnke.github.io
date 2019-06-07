@@ -27,7 +27,7 @@ After realizing that a) I could not get my hands on our Slack analytics due to t
 In this blog post, I am now going to analyze this data in order to answer the following questions:
 
 1. Is there an overlap between the Open Science MOOC's Twitter followers and friends? Who should be immediately unfollowed for not following back?* 
-2. Where are the Open Science MOOC's twitter followers based? Is there any evidence for a geographically concentrated Open Science Twitter bubble? 
+2. Where are the Open Science MOOC's followers based? Is there any evidence for a geographically concentrated Open Science Twitter bubble? 
 3. What about diversity among the followers? Does the Open Science MOOC keep its promise of being an inclusive and diverse platform? 
 4. Who are the most influential and active followers? Could they potentially start a revolution, take over the Twitter community, and throw Jon off the Open Science throne? 
 5. What do the followers state in their own profile descriptions? Which institutions are they affiliated with? Which opinions do they express? And last but certainly not least: Do their own texts say anything meaningful about the interests and research activities of the Open Science Twitter MOOC-ers (spoiler alert: yes)?
@@ -50,6 +50,7 @@ p_load(genderizeR, ggraph, igraph, leaflet, magrittr, maps, reshape2, SnowballC,
 ```
 
 ```r
+# Twitter authentication
 options(httr_oauth_cache = TRUE)
 
 setup_twitter_oauth(consumer_key = "[INSERT OWN KEY HERE]",
@@ -70,6 +71,7 @@ friends_df <- twListToDF(osci_friends)
 ```
 
 ```r
+# Set theme
 viz_theme <- theme(
   axis.line = element_line(colour = "#2c3e50"),
   axis.text = element_text(colour = "#2c3e50"),
