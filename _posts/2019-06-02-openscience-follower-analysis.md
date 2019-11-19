@@ -14,6 +14,8 @@ tags:
 - web scraping
 ---
 
+**[Official announcement from the Open Science MOOC Steering Committee addressing organizational changes concerning our (former) steering committee member and OS MOOC founder Jon Tennant.](https://opensciencemooc.eu/statement/2019/11/15/official-sc-statement/)**
+
 ## Introduction
 
 As of lately, several dear friends of mine tried to convince me to resume writing and this was when I remembered that I apparently once thought so as well when creating this blog. One of those friends happened to be [Jon Tennant](http://fossilsandshit.com/), dinosaur whisperer from Brexit land and founder of the [Open Science MOOC](https://opensciencemooc.eu/).
