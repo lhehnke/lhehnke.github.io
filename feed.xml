@@ -1,0 +1,28 @@
+---
+layout: feed
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Data Planes</title>
+ <subtitle>Data Planes is a blog by Lisa Hehnke, a researcher turned data scientist, psych student, and aviation enthusiast from Hamburg, Germany. Her articles mainly focus on spatial analyses, computational social science, and serial killers.</subtitle>
+ <link href="http://lhehnke.github.io/feed.xml" rel="self"/>
+ <link href="http://lhehnke.github.io/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://lhehnke.github.io/</id>
+ <author>
+   <name>Lisa Hehnke</name>
+   <email>lisa.hehnke@uni-hamburg.de</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://lhehnke.github.io{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://lhehnke.github.io/notes{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>

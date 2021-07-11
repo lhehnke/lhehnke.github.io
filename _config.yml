@@ -1,0 +1,38 @@
+permalink: /notes/:year/:month/:day/:title
+markdown: kramdown
+excerpt_separator: "<!--more-->"
+title: Lisa Hehnke
+tagline: Working towards social & organizational change
+description: Home base of Lisa Hehnke, a freelance data scientist, consultant, trainer, and mediator from Berlin, Germany.
+url: http://lhehnke.github.io
+
+logo: logo_greyscale_light.png
+
+owner:
+  name:           Lisa Hehnke
+  avatar:         lisa_new.png
+  email:          lisa@dataplanes.org
+  twitter:        DataPlanes
+  github:         lhehnke  
+  
+social:
+  name: Lisa Hehnke
+  links:
+    - https://twitter.com/DataPlanes
+    - https://www.linkedin.com/in/lisa-hehnke
+    - https://github.com/lhehnke
+
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  hard_wrap: false
+  
+gems:
+  - jemoji
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-seo-tag
