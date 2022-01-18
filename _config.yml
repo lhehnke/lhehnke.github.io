@@ -2,11 +2,11 @@ permalink: /notes/:year/:month/:day/:title
 markdown: kramdown
 excerpt_separator: "<!--more-->"
 title: Lisa Hehnke
-tagline: Working towards social & organizational change
-description: Home base of Lisa Hehnke, a freelance data scientist, consultant, trainer, and mediator from Berlin, Germany.
+tagline: Connecting analytics & creativity for good.
+description: Home base of Lisa Hehnke, a freelancer from Berlin, Germany.
 url: http://lhehnke.github.io
 
-logo: logo_greyscale_light.png
+logo: logo_new.ico
 
 owner:
   name:           Lisa Hehnke
